@@ -1,0 +1,54 @@
+# ./.tmuxinator.yml
+
+name: tapestry
+
+# Optional tmux socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+# Runs on project start, always
+# on_project_start: command
+on_project_start: lsof -t -i tcp:3000 | xargs kill -KILL && lsof -t -i tcp:3035 | xargs kill -KILL
+# Run on project start, the first time
+# on_project_first_start: command
+# Run on project start, after the first time
+# on_project_restart: command
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+# Run on project stop
+# on_project_stop: command
+# on_project_stop: docker-compose down
+on_project_stop: docker kill tapestry_db_1 && docker kill tapestry_redis_1
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+windows:
+  - db: docker-compose -f docker/docker-compose.dev.yml -p tapestry up
+  - console: bin/rails c
+  - server:
+      layout: main-vertical
+      panes:
+        - env DISABLE_SPRING=1 bin/rails s
+        - bin/webpack-dev-server
+  - worker: bundle exec sidekiq
+  
+  - shell:
