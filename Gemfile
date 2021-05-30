@@ -64,3 +64,5 @@ end
 group :development do
   gem 'annotate'
 end
+
+gem "friendly_id", "~> 5.4"
