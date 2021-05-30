@@ -60,3 +60,7 @@ gem "sidekiq", "~> 6.2"
 group :development, :test do
   gem 'pry-rails'
 end
+
+group :development do
+  gem 'annotate'
+end
