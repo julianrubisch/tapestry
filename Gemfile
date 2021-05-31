@@ -66,3 +66,7 @@ group :development do
 end
 
 gem "friendly_id", "~> 5.4"
+
+group :development do
+  gem 'solargraph-rails', '0.2.0.pre'
+end
