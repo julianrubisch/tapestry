@@ -185,7 +185,7 @@ GEM
     reverse_markdown (2.0.0)
       nokogiri
     rexml (3.2.5)
-    rubocop (1.15.0)
+    rubocop (1.14.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -196,6 +196,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.7.0)
       parser (>= 3.0.1.1)
+    rubocop-performance (1.11.2)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -215,7 +218,7 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
-    solargraph (0.40.4)
+    solargraph (0.41.1)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
@@ -229,8 +232,8 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    solargraph-rails (0.2.0.pre)
-      solargraph (~> 0.40.0)
+    solargraph-rails (0.2.1)
+      solargraph (~> 0.41.1)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -239,6 +242,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    standard (1.1.1)
+      rubocop (= 1.14.0)
+      rubocop-performance (= 1.11.2)
     stimulus-rails (0.2.3)
       rails (>= 6.0.0)
     thor (1.1.0)
@@ -288,8 +294,9 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq (~> 6.2)
-  solargraph-rails (= 0.2.0.pre)
+  solargraph-rails (= 0.2.1)
   spring
+  standard (~> 1.1)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
