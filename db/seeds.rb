@@ -5,4 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create email: "admin@tapestry.fm", password: "test123", password_confirmation: "test123"
+user = User.create email: "admin@tapestry.fm", password: "test123", password_confirmation: "test123"
+user.lists << List.new(inbox: true, owner: user)
