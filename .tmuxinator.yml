@@ -48,7 +48,7 @@ windows:
       layout: main-vertical
       panes:
         - env DISABLE_SPRING=1 bin/rails s
-        - bin/webpack-dev-server
+        - npm start
   - worker: bundle exec sidekiq
   
   - shell:
