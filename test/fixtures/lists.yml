@@ -2,13 +2,13 @@
 #
 # Table name: lists
 #
-#  id         :bigint           not null, primary key
+#  id         :uuid             not null, primary key
 #  inbox      :boolean          default(FALSE)
 #  name       :string
 #  public     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  owner_id   :bigint           not null
+#  owner_id   :uuid             not null
 #
 # Indexes
 #

@@ -2,13 +2,13 @@
 #
 # Table name: lists
 #
-#  id         :bigint           not null, primary key
+#  id         :uuid             not null, primary key
 #  inbox      :boolean          default(FALSE)
 #  name       :string
 #  public     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  owner_id   :bigint           not null
+#  owner_id   :uuid             not null
 #
 # Indexes
 #
@@ -24,5 +24,5 @@ class List < ApplicationRecord
   has_many :list_memberships
   has_many :users, through: :list_memberships
 
-  validates :inbox, uniqueness: { scope: :owner, message: "A user can have only one inbox" }
+  validates :inbox, uniqueness: {scope: :owner, message: "A user can have only one inbox"}
 end

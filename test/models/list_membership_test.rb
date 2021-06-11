@@ -2,13 +2,13 @@
 #
 # Table name: list_memberships
 #
-#  id          :bigint           not null, primary key
+#  id          :uuid             not null, primary key
 #  may_comment :boolean          default(FALSE)
 #  may_edit    :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  list_id     :bigint           not null
-#  user_id     :bigint           not null
+#  list_id     :uuid             not null
+#  user_id     :uuid             not null
 #
 # Indexes
 #

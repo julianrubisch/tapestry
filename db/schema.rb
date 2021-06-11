@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_06_02_172307) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -26,9 +27,9 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "list_memberships", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "list_id", null: false
+  create_table "list_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "list_id", null: false
     t.boolean "may_comment", default: false
     t.boolean "may_edit", default: false
     t.datetime "created_at", precision: 6, null: false
@@ -37,9 +38,9 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["user_id"], name: "index_list_memberships_on_user_id"
   end
 
-  create_table "lists", force: :cascade do |t|
+  create_table "lists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
-    t.bigint "owner_id", null: false
+    t.uuid "owner_id", null: false
     t.boolean "public", default: false
     t.boolean "inbox", default: false
     t.datetime "created_at", precision: 6, null: false
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["owner_id"], name: "index_lists_on_owner_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
