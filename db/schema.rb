@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_172307) do
+ActiveRecord::Schema.define(version: 2021_06_11_135557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "list_entries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "url"
+    t.string "title"
+    t.uuid "list_id", null: false
+    t.string "listable_type"
+    t.uuid "listable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_list_entries_on_list_id"
   end
 
   create_table "list_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -48,6 +59,18 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["owner_id"], name: "index_lists_on_owner_id"
   end
 
+  create_table "playlists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_172307) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "list_entries", "lists"
   add_foreign_key "list_memberships", "lists"
   add_foreign_key "list_memberships", "users"
   add_foreign_key "lists", "users", column: "owner_id"
