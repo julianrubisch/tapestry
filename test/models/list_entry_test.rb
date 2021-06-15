@@ -34,6 +34,9 @@ class ListEntryTest < ActiveSupport::TestCase
     @simple_bandcamp_track_url = "https://tropus.bandcamp.com/track/proxima-a"
     @shortened_bandcamp_track_url = "https://bit.ly/3voFhIL"
 
+    @simple_bandcamp_album_url = "https://tropus.bandcamp.com/album/metatropus-ep"
+    @shortened_bandcamp_album_url = "https://bit.ly/2TWTFuP"
+
     VCR.insert_cassette(name)
   end
 
@@ -77,4 +80,13 @@ class ListEntryTest < ActiveSupport::TestCase
     assert_instance_of(BandcampTrack, list_entry&.listable)
   end
 
+  test "creates a bandcamp playlist from a bandcamp album URL" do
+    list_entry = ListEntry.create_from_url(url: @simple_bandcamp_album_url, list: lists(:one))
+    assert_instance_of(BandcampAlbum, list_entry&.listable)
+  end
+
+  test "creates a bandcamp playlist from a shortened bandcamp album URL" do
+    list_entry = ListEntry.create_from_url(url: @shortened_bandcamp_album_url, list: lists(:one))
+    assert_instance_of(BandcampAlbum, list_entry&.listable)
+  end
 end
