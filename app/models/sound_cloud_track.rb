@@ -7,9 +7,5 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-# one:
-#   type: 
-
-# two:
-#   type: 
+class SoundCloudTrack < Track
+end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: listables
+# Table name: list_entries
 #
 #  id            :uuid             not null, primary key
 #  listable_type :string
@@ -13,7 +13,7 @@
 #
 # Indexes
 #
-#  index_listables_on_list_id  (list_id)
+#  index_list_entries_on_list_id  (list_id)
 #
 # Foreign Keys
 #
