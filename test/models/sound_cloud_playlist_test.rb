@@ -7,9 +7,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+require "test_helper"
 
-# one:
-#   type: 
-
-# two:
-#   type: 
+class SoundCloudPlaylistTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

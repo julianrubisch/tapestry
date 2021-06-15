@@ -24,9 +24,12 @@ require "test_helper"
 
 class ListEntryTest < ActiveSupport::TestCase
   setup do
-    @simple_soundcloud_url = "https://soundcloud.com/titled/limes"
-    @soundcloud_track_url = "https://soundcloud.com/titled/tracks"
-    @shortened_soundcloud_url = "https://bit.ly/3zrFuhM"
+    @simple_soundcloud_track_url = "https://soundcloud.com/titled/limes"
+    @soundcloud_tracks_url = "https://soundcloud.com/titled/tracks"
+    @shortened_soundcloud_track_url = "https://bit.ly/3zrFuhM"
+
+    @simple_soundcloud_set_url = "https://soundcloud.com/programmverdichter/sets/barba-curata-ep"
+    @shortened_soundcloud_set_url = "https://bit.ly/3gqkf8B"
 
     VCR.insert_cassette(name)
   end
@@ -36,18 +39,28 @@ class ListEntryTest < ActiveSupport::TestCase
   end
 
   test "creates a soundcloud track from a soundcloud URL" do
-    list_entry = ListEntry.create_from_url(url: @simple_soundcloud_url, list: lists(:one))
+    list_entry = ListEntry.create_from_url(url: @simple_soundcloud_track_url, list: lists(:one))
     assert_instance_of(SoundCloudTrack, list_entry&.listable)
   end
 
   test "creates a soundcloud track from a shortened soundcloud URL" do
-    list_entry = ListEntry.create_from_url(url: @shortened_soundcloud_url, list: lists(:one))
+    list_entry = ListEntry.create_from_url(url: @shortened_soundcloud_track_url, list: lists(:one))
     assert_instance_of(SoundCloudTrack, list_entry&.listable)
   end
 
   test "passing a soundcloud track index view raises" do
     assert_raises UnparsableTrackUrlError do
-      ListEntry.create_from_url(url: @soundcloud_track_url, list: lists(:one))
+      ListEntry.create_from_url(url: @soundcloud_tracks_url, list: lists(:one))
     end
+  end
+
+  test "creates a soundcloud playlist from a soundcloud set URL" do
+    list_entry = ListEntry.create_from_url(url: @simple_soundcloud_set_url, list: lists(:one))
+    assert_instance_of(SoundCloudPlaylist, list_entry&.listable)
+  end
+
+  test "creates a soundcloud playlist from a shortened soundcloud set URL" do
+    list_entry = ListEntry.create_from_url(url: @shortened_soundcloud_set_url, list: lists(:one))
+    assert_instance_of(SoundCloudPlaylist, list_entry&.listable)
   end
 end
