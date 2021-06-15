@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_114431) do
+ActiveRecord::Schema.define(version: 2021_06_15_123922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -36,7 +36,9 @@ ActiveRecord::Schema.define(version: 2021_06_15_114431) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "artist"
+    t.string "slug"
     t.index ["list_id"], name: "index_list_entries_on_list_id"
+    t.index ["slug"], name: "index_list_entries_on_slug", unique: true
   end
 
   create_table "list_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -57,7 +59,9 @@ ActiveRecord::Schema.define(version: 2021_06_15_114431) do
     t.boolean "inbox", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
     t.index ["owner_id"], name: "index_lists_on_owner_id"
+    t.index ["slug"], name: "index_lists_on_slug", unique: true
   end
 
   create_table "playlists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

@@ -6,6 +6,7 @@
 #  inbox      :boolean          default(FALSE)
 #  name       :string
 #  public     :boolean          default(FALSE)
+#  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  owner_id   :uuid             not null
@@ -13,12 +14,16 @@
 # Indexes
 #
 #  index_lists_on_owner_id  (owner_id)
+#  index_lists_on_slug      (slug) UNIQUE
 #
 # Foreign Keys
 #
 #  fk_rails_...  (owner_id => users.id)
 #
 class List < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   belongs_to :owner, class_name: "User"
 
   has_many :list_memberships

@@ -5,6 +5,7 @@
 #  id            :uuid             not null, primary key
 #  artist        :string
 #  listable_type :string
+#  slug          :string
 #  title         :string
 #  url           :string
 #  created_at    :datetime         not null
@@ -15,6 +16,7 @@
 # Indexes
 #
 #  index_list_entries_on_list_id  (list_id)
+#  index_list_entries_on_slug     (slug) UNIQUE
 #
 # Foreign Keys
 #
@@ -24,6 +26,9 @@
 require "open-uri"
 
 class ListEntry < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :list
 
   delegated_type :listable, types: %w[Track Playlist]
