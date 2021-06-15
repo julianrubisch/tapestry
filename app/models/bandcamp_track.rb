@@ -1,0 +1,2 @@
+class BandcampTrack < Track
+end

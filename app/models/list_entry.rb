@@ -41,6 +41,8 @@ class ListEntry < ApplicationRecord
         create! listable: SoundCloudPlaylist.new, url: base_uri, list: list
       when /soundcloud.com\/(?<artist>.+)\/(?<title>.+)/
         create! listable: SoundCloudTrack.new, url: base_uri, list: list
+      when /(?<artist.+>).bandcamp.com\/track\/(?<title>.+)/
+        create! listable: BandcampTrack.new, url: base_uri, list: list
       end
     end
   end

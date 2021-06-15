@@ -31,6 +31,9 @@ class ListEntryTest < ActiveSupport::TestCase
     @simple_soundcloud_set_url = "https://soundcloud.com/programmverdichter/sets/barba-curata-ep"
     @shortened_soundcloud_set_url = "https://bit.ly/3gqkf8B"
 
+    @simple_bandcamp_track_url = "https://tropus.bandcamp.com/track/proxima-a"
+    @shortened_bandcamp_track_url = "https://bit.ly/3voFhIL"
+
     VCR.insert_cassette(name)
   end
 
@@ -63,4 +66,15 @@ class ListEntryTest < ActiveSupport::TestCase
     list_entry = ListEntry.create_from_url(url: @shortened_soundcloud_set_url, list: lists(:one))
     assert_instance_of(SoundCloudPlaylist, list_entry&.listable)
   end
+
+  test "creates a bandcamp track from a bandcamp URL" do
+    list_entry = ListEntry.create_from_url(url: @simple_bandcamp_track_url, list: lists(:one))
+    assert_instance_of(BandcampTrack, list_entry&.listable)
+  end
+
+  test "creates a bandcamp track from a shortened bandcamp URL" do
+    list_entry = ListEntry.create_from_url(url: @shortened_bandcamp_track_url, list: lists(:one))
+    assert_instance_of(BandcampTrack, list_entry&.listable)
+  end
+
 end
