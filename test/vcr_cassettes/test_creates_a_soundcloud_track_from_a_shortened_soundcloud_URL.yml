@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Jun 2021 11:39:16 GMT
+      - Tue, 15 Jun 2021 12:10:27 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -35,8 +35,8 @@ http_interactions:
       Referrer-Policy:
       - unsafe-url
       Set-Cookie:
-      - _bit=l5fbDg-c9f01f29e7054c989e-002; Domain=bit.ly; Expires=Sun, 12 Dec 2021
-        11:39:16 GMT
+      - _bit=l5fcar-1acf4aed926c23d975-00Q; Domain=bit.ly; Expires=Sun, 12 Dec 2021
+        12:10:27 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -48,7 +48,7 @@ http_interactions:
         <head><title>Bitly</title></head>
         <body><a href="https://soundcloud.com/titled/drecke">moved here</a></body>
         </html>
-  recorded_at: Tue, 15 Jun 2021 11:39:16 GMT
+  recorded_at: Tue, 15 Jun 2021 12:10:28 GMT
 - request:
     method: get
     uri: https://soundcloud.com/titled/drecke
@@ -82,13 +82,13 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - enabledFeatures; dur=7.089571; desc="api-v2/enabledFeatures", experiments;
-        dur=5.894071; desc="api-v2/experiments", resolve; dur=99.282976; desc="api-v2/resolve",
-        privacySettings; dur=6.936809; desc="api-v2/privacySettings", geoip; dur=2.218952;
-        desc="geoip/geoip", user; dur=8.681472; desc="api-v2/user", trackComments;
-        dur=35.387328; desc="api-v2/trackComments"
+      - enabledFeatures; dur=5.058588; desc="api-v2/enabledFeatures", experiments;
+        dur=7.25736; desc="api-v2/experiments", resolve; dur=58.293026; desc="api-v2/resolve",
+        privacySettings; dur=8.43031; desc="api-v2/privacySettings", geoip; dur=7.45516;
+        desc="geoip/geoip", user; dur=13.143855; desc="api-v2/user", trackComments;
+        dur=28.52628; desc="api-v2/trackComments"
       Date:
-      - Tue, 15 Jun 2021 11:39:17 GMT
+      - Tue, 15 Jun 2021 12:10:28 GMT
       Strict-Transport-Security:
       - max-age=63072000; includeSubdomains; preload
       Server:
@@ -98,11 +98,11 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3dca71b0fde541bcd2caf3756ffbc27a.cloudfront.net (CloudFront)
+      - 1.1 a776ddd883fba0ca203b52822fb50572.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - VIE50-C1
       X-Amz-Cf-Id:
-      - pLjSlw8NZ0RS3k9boCQTksGDwJTdxF2Nm38YMhHPIffR4REoGysBMQ==
+      - rfSUBb_a2hATJpGPApMDBVxCMb9g5mMIDRnLwEDWuRvO9B7Nyvg_Ww==
     body:
       encoding: ASCII-8BIT
       string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta
@@ -271,7 +271,7 @@ http_interactions:
         o=Date.now(),a=[\"resource_type\",\"get\",\"set\",\"addSubmodel\",\"release\"];function
         r(t){var n;return(n=t,a.every(function(e){return e in n.prototype}))?function(e){var
         n=o;e.lastFetchTime&&(n=e.lastFetchTime,delete e.lastFetchTime),(e=new t(e,{parse:!0,__hydrate:!0})).lastFetchTime=n,e.release()}:t}e.forEach(function(e){try{var
-        n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(e){}})},[{\"id\":2020,\"chunks\":[0],\"data\":[{\"features\":[\"v2_enable_sourcepoint_tcfv2\",\"v2_snippet_ux_skip_snippets_in_play_queue\",\"v2_post_with_caption\",\"v2_direct_support_link\",\"v2_enable_onetrust\",\"v2_use_onetrust_eu2\",\"v2_use_onetrust_us\",\"v2_use_new_connect\",\"v2_tags_recent_tracks\",\"v2_enable_pwa\",\"v2_stories\",\"v2_show_pro_unlimited_badge_profile\",\"mobi_use_onetrust_eu1\",\"mobi_use_onetrust_gb\",\"v2_hide_pro_badge_on_avatar\",\"mobi_social_sharing\",\"v2_can_request_verified_badge\",\"mobi_use_onetrust_eu4\",\"featured_artists_banner\",\"v2_repost_redirect_page\",\"v2_use_onetrust_gb\",\"v2_hq_file_storage_release\",\"v2_use_onetrust_eu4\",\"mobi_use_onetrust_eu3\",\"mobi_use_onetrust_elsewhere\",\"v2_show_verified_badge\",\"v2_use_onetrust_eu3\",\"mobi_use_onetrust_us\",\"v2_oscp_german_tax_fields_support\",\"v2_use_onetrust_eu1\",\"v2_enable_sourcepoint\",\"mobi_use_onetrust_eu2\",\"v2_use_onetrust_elsewhere\",\"mobi_sign_in_experiment\",\"mobi_enable_onetrust\",\"v2_can_see_insights\",\"mobi_trinity\"]}]},{\"id\":256,\"chunks\":[49],\"data\":[{\"allows_messages_from_unfollowed_users\":false,\"analytics_opt_in\":true,\"communications_opt_in\":true,\"targeted_advertising_opt_in\":false,\"legislation\":[]}]},{\"id\":2033,\"chunks\":[49],\"data\":[{\"country_code\":\"AT\",\"country_name\":\"Austria\",\"region\":\"09\",\"city\":\"Vienna\",\"postal_code\":\"1030\",\"latitude\":48.19819641113281,\"longitude\":16.391693115234375}]},{\"id\":2021,\"chunks\":[0],\"data\":[{}]},{\"id\":1150,\"chunks\":[0],\"data\":[\"192811-707230-392517-809051\"]},{\"id\":34,\"chunks\":[49],\"data\":[{\"avatar_url\":\"https://i1.sndcdn.com/avatars-000003626708-58tmus-large.jpg\",\"city\":\"vienna\",\"comments_count\":7,\"country_code\":\"AT\",\"created_at\":\"2010-08-08T13:31:26Z\",\"creator_subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\"}}],\"creator_subscription\":{\"product\":{\"id\":\"creator-pro-unlimited\"}},\"description\":\"Live
+        n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(e){}})},[{\"id\":2020,\"chunks\":[0],\"data\":[{\"features\":[\"v2_enable_sourcepoint_tcfv2\",\"v2_snippet_ux_skip_snippets_in_play_queue\",\"v2_post_with_caption\",\"v2_direct_support_link\",\"v2_enable_onetrust\",\"v2_use_onetrust_eu2\",\"v2_use_onetrust_us\",\"v2_use_new_connect\",\"v2_tags_recent_tracks\",\"v2_enable_pwa\",\"v2_stories\",\"v2_show_pro_unlimited_badge_profile\",\"mobi_use_onetrust_eu1\",\"mobi_use_onetrust_gb\",\"v2_hide_pro_badge_on_avatar\",\"mobi_social_sharing\",\"v2_can_request_verified_badge\",\"mobi_use_onetrust_eu4\",\"featured_artists_banner\",\"v2_repost_redirect_page\",\"v2_use_onetrust_gb\",\"v2_hq_file_storage_release\",\"v2_use_onetrust_eu4\",\"mobi_use_onetrust_eu3\",\"mobi_use_onetrust_elsewhere\",\"v2_show_verified_badge\",\"v2_use_onetrust_eu3\",\"mobi_use_onetrust_us\",\"v2_oscp_german_tax_fields_support\",\"v2_use_onetrust_eu1\",\"v2_enable_sourcepoint\",\"mobi_use_onetrust_eu2\",\"v2_use_onetrust_elsewhere\",\"mobi_sign_in_experiment\",\"mobi_enable_onetrust\",\"v2_can_see_insights\",\"v2_count_frontend_errors\",\"mobi_trinity\"]}]},{\"id\":256,\"chunks\":[49],\"data\":[{\"allows_messages_from_unfollowed_users\":false,\"analytics_opt_in\":true,\"communications_opt_in\":true,\"targeted_advertising_opt_in\":false,\"legislation\":[]}]},{\"id\":2033,\"chunks\":[49],\"data\":[{\"country_code\":\"AT\",\"country_name\":\"Austria\",\"region\":\"09\",\"city\":\"Vienna\",\"postal_code\":\"1030\",\"latitude\":48.19819641113281,\"longitude\":16.391693115234375}]},{\"id\":2021,\"chunks\":[0],\"data\":[{}]},{\"id\":1150,\"chunks\":[0],\"data\":[\"615128-998294-440945-275838\"]},{\"id\":34,\"chunks\":[49],\"data\":[{\"avatar_url\":\"https://i1.sndcdn.com/avatars-000003626708-58tmus-large.jpg\",\"city\":\"vienna\",\"comments_count\":7,\"country_code\":\"AT\",\"created_at\":\"2010-08-08T13:31:26Z\",\"creator_subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\"}}],\"creator_subscription\":{\"product\":{\"id\":\"creator-pro-unlimited\"}},\"description\":\"Live
         generated, Improvised, algorithmically composed stuff.\\r\\nFor Audiovisual
         Stuff visit my website: http://patriklechner.tumblr.com/ \\r\\nOr Vimeo Account:
         http://vimeo.com/titled\",\"followers_count\":334,\"followings_count\":161,\"first_name\":\"patrik\",\"full_name\":\"patrik
@@ -283,5 +283,5 @@ http_interactions:
         http://vimeo.com/titled\",\"followers_count\":334,\"followings_count\":161,\"first_name\":\"patrik\",\"full_name\":\"patrik
         lechner\",\"groups_count\":0,\"id\":1471691,\"kind\":\"user\",\"last_modified\":\"2020-05-13T10:47:13Z\",\"last_name\":\"lechner\",\"likes_count\":339,\"playlist_likes_count\":4,\"permalink\":\"titled\",\"permalink_url\":\"https://soundcloud.com/titled\",\"playlist_count\":0,\"reposts_count\":null,\"track_count\":42,\"uri\":\"https://api.soundcloud.com/users/1471691\",\"urn\":\"soundcloud:users:1471691\",\"username\":\"Patrik
         Lechner\",\"verified\":false,\"visuals\":{\"urn\":\"soundcloud:users:1471691\",\"enabled\":true,\"visuals\":[{\"urn\":\"soundcloud:visuals:18680000\",\"entry_time\":0,\"visual_url\":\"https://i1.sndcdn.com/visuals-000001471691-G3xlDE-original.jpg\"}],\"tracking\":null},\"badges\":{\"pro\":false,\"pro_unlimited\":true,\"verified\":false},\"station_permalink\":\"artist-stations:1471691\"}}]}]);</script>\n</body>\n</html>\n"
-  recorded_at: Tue, 15 Jun 2021 11:39:17 GMT
+  recorded_at: Tue, 15 Jun 2021 12:10:28 GMT
 recorded_with: VCR 6.0.0

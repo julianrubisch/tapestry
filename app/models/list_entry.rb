@@ -3,6 +3,7 @@
 # Table name: list_entries
 #
 #  id            :uuid             not null, primary key
+#  artist        :string
 #  listable_type :string
 #  title         :string
 #  url           :string
@@ -26,6 +27,8 @@ class ListEntry < ApplicationRecord
   belongs_to :list
 
   delegated_type :listable, types: %w[Track Playlist]
+
+  # validates :url, :title, :artist, presence: true
 
   def self.create_from_url(url:, list:)
     URI.open(url) do |uri|

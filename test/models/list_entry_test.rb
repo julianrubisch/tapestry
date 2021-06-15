@@ -3,6 +3,7 @@
 # Table name: list_entries
 #
 #  id            :uuid             not null, primary key
+#  artist        :string
 #  listable_type :string
 #  title         :string
 #  url           :string
