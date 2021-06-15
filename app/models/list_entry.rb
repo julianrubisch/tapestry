@@ -34,18 +34,20 @@ class ListEntry < ApplicationRecord
     URI.open(url) do |uri|
       base_uri = uri.base_uri
 
-      case base_uri.to_s
+      listable_type = case base_uri.to_s
       when /soundcloud.com\/(?<artist>.+)\/tracks/
         raise UnparsableTrackUrlError
       when /soundcloud.com\/(?<artist>.+)\/sets\/(?<title>.+)/
-        create! listable: SoundCloudPlaylist.new, url: base_uri, list: list, artist: $1, title: $2
+        SoundCloudPlaylist
       when /soundcloud.com\/(?<artist>.+)\/(?<title>.+)/
-        create! listable: SoundCloudTrack.new, url: base_uri, list: list, artist: $1, title: $2
+        SoundCloudTrack
       when /(?<artist>.+)\.bandcamp.com\/track\/(?<title>.+)/
-        create! listable: BandcampTrack.new, url: base_uri, list: list, artist: $1, title: $2
+        BandcampTrack
       when /(?<artist>.+)\.bandcamp.com\/album\/(?<title>.+)/
-        create! listable: BandcampAlbum.new, url: base_uri, list: list, artist: $1, title: $2
+        BandcampAlbum
       end
+
+      create! listable: listable_type.new, url: base_uri, list: list, artist: $1, title: $2
     end
   end
 end
