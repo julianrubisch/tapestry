@@ -28,7 +28,7 @@ class ListEntry < ApplicationRecord
 
   delegated_type :listable, types: %w[Track Playlist]
 
-  # validates :url, :title, :artist, presence: true
+  validates :url, :title, :artist, presence: true
 
   def self.create_from_url(url:, list:)
     URI.open(url) do |uri|
@@ -38,13 +38,13 @@ class ListEntry < ApplicationRecord
       when /soundcloud.com\/(?<artist>.+)\/tracks/
         raise UnparsableTrackUrlError
       when /soundcloud.com\/(?<artist>.+)\/sets\/(?<title>.+)/
-        create! listable: SoundCloudPlaylist.new, url: base_uri, list: list
+        create! listable: SoundCloudPlaylist.new, url: base_uri, list: list, artist: $1, title: $2
       when /soundcloud.com\/(?<artist>.+)\/(?<title>.+)/
-        create! listable: SoundCloudTrack.new, url: base_uri, list: list
-      when /(?<artist.+>).bandcamp.com\/track\/(?<title>.+)/
-        create! listable: BandcampTrack.new, url: base_uri, list: list
-      when /(?<artist.+>).bandcamp.com\/album\/(?<title>.+)/
-        create! listable: BandcampAlbum.new, url: base_uri, list: list
+        create! listable: SoundCloudTrack.new, url: base_uri, list: list, artist: $1, title: $2
+      when /(?<artist>.+)\.bandcamp.com\/track\/(?<title>.+)/
+        create! listable: BandcampTrack.new, url: base_uri, list: list, artist: $1, title: $2
+      when /(?<artist>.+)\.bandcamp.com\/album\/(?<title>.+)/
+        create! listable: BandcampAlbum.new, url: base_uri, list: list, artist: $1, title: $2
       end
     end
   end
