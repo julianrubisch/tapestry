@@ -35,7 +35,7 @@ class ListEntry < ApplicationRecord
 
   validates :url, :title, :artist, presence: true
 
-  def self.create_from_url(url:, list:)
+  def self.init_from_url(url:, list:)
     URI.open(url) do |uri|
       base_uri = uri.base_uri
 
@@ -52,7 +52,7 @@ class ListEntry < ApplicationRecord
         BandcampAlbum
       end
 
-      create! listable: listable_type.new, url: base_uri, list: list, artist: $1, title: $2
+      new listable: listable_type.new, url: base_uri, list: list, artist: $1, title: $2
     end
   end
 end
