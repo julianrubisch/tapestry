@@ -46,9 +46,9 @@ class ListEntry < ApplicationRecord
         SoundCloudPlaylist
       when /soundcloud.com\/(?<artist>.+)\/(?<title>.+)/
         SoundCloudTrack
-      when /(?<artist>.+)\.bandcamp.com\/track\/(?<title>.+)/
+      when /https?:\/\/(?<artist>.+)\.bandcamp.com\/track\/(?<title>.+)/
         BandcampTrack
-      when /(?<artist>.+)\.bandcamp.com\/album\/(?<title>.+)/
+      when /https?:\/\/(?<artist>.+)\.bandcamp.com\/album\/(?<title>.+)/
         BandcampAlbum
       end
 
