@@ -36,6 +36,8 @@ class ListEntry < ApplicationRecord
   validates :url, :title, :artist, presence: true
 
   def self.init_from_url(url:, list:)
+    return new(list: list) if url.blank?
+
     URI.open(url) do |uri|
       base_uri = uri.base_uri
 

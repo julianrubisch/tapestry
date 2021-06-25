@@ -1,0 +1,243 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://soundcloud.com/titled/limes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Pants:
+      - distant-towel
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - private, max-age=0, no-cache, no-store
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - enabledFeatures; dur=3.669549; desc="api-v2/enabledFeatures", experiments;
+        dur=3.908281; desc="api-v2/experiments", resolve; dur=126.142711; desc="api-v2/resolve",
+        privacySettings; dur=4.336891; desc="api-v2/privacySettings", geoip; dur=1.266772;
+        desc="geoip/geoip", user; dur=24.735466; desc="api-v2/user", trackComments;
+        dur=79.380592; desc="api-v2/trackComments"
+      Date:
+      - Fri, 25 Jun 2021 07:34:14 GMT
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 baaf38f0a0d54e4834bf934fa5189ceb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA50-C1
+      X-Amz-Cf-Id:
+      - GeZZNSyMRSan18AZZdV4sKdiFH9jjKmzwIyqzJ14SexrZeMY8yKVKA==
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta
+        name=\"theme-color\" content=\"#333\">\n<link rel=\"dns-prefetch\" href=\"//style.sndcdn.com\">\n<link
+        rel=\"dns-prefetch\" href=\"//a-v2.sndcdn.com\">\n<link rel=\"dns-prefetch\"
+        href=\"//api-v2.soundcloud.com\">\n<link rel=\"dns-prefetch\" href=\"//sb.scorecardresearch.com\">\n<link
+        rel=\"dns-prefetch\" href=\"//secure.quantserve.com\">\n<link rel=\"dns-prefetch\"
+        href=\"//eventlogger.soundcloud.com\">\n<link rel=\"dns-prefetch\" href=\"//api.soundcloud.com\">\n<link
+        rel=\"dns-prefetch\" href=\"//ssl.google-analytics.com\">\n<link rel=\"dns-prefetch\"
+        href=\"//i1.sndcdn.com\">\n<link rel=\"dns-prefetch\" href=\"//i2.sndcdn.com\">\n<link
+        rel=\"dns-prefetch\" href=\"//i3.sndcdn.com\">\n<link rel=\"dns-prefetch\"
+        href=\"//i4.sndcdn.com\">\n<link rel=\"dns-prefetch\" href=\"//wis.sndcdn.com\">\n<link
+        rel=\"dns-prefetch\" href=\"//va.sndcdn.com\">\n<link rel=\"dns-prefetch\"
+        href=\"//pixel.quantserve.com\">\n<title>Stream Limes by Patrik Lechner |
+        Listen online for free on SoundCloud</title>\n<meta content=\"record, sounds,
+        share, sound, audio, tracks, music, soundcloud\" name=\"keywords\">\n<meta
+        name=\"referrer\" content=\"origin\">\n<meta name=\"google-site-verification\"
+        content=\"dY0CigqM8Inubs_hgrYMwk-zGchKwrvJLcvI_G8631Q\">\n<link crossorigin=\"use-credentials\"
+        rel=\"manifest\" href=\"/webmanifest.json\">\n<meta name=\"viewport\" content=\"width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no\">\n<meta
+        content=\"19507961798\" property=\"fb:app_id\">\n<meta content=\"SoundCloud\"
+        property=\"og:site_name\">\n<meta content=\"SoundCloud\" property=\"twitter:site\">\n<meta
+        content=\"SoundCloud\" property=\"twitter:app:name:iphone\">\n<meta content=\"336353151\"
+        property=\"twitter:app:id:iphone\">\n<meta content=\"SoundCloud\" property=\"twitter:app:name:ipad\">\n<meta
+        content=\"336353151\" property=\"twitter:app:id:ipad\">\n<meta content=\"SoundCloud\"
+        property=\"twitter:app:name:googleplay\">\n<meta content=\"com.soundcloud.android\"
+        property=\"twitter:app:id:googleplay\">\n<link href=\"/sc-opensearch.xml\"
+        rel=\"search\" title=\"SoundCloud search\" type=\"application/opensearchdescription+xml\">\n<meta
+        name=\"description\" content=\"Stream Limes by Patrik Lechner on desktop and
+        mobile. Play over 265 million tracks for free on SoundCloud.\"><meta property=\"twitter:app:name:iphone\"
+        content=\"SoundCloud\"><meta property=\"twitter:app:id:iphone\" content=\"336353151\"><meta
+        property=\"twitter:app:name:ipad\" content=\"SoundCloud\"><meta property=\"twitter:app:id:ipad\"
+        content=\"336353151\"><meta property=\"twitter:app:name:googleplay\" content=\"SoundCloud\"><meta
+        property=\"twitter:app:id:googleplay\" content=\"com.soundcloud.android\"><meta
+        property=\"twitter:title\" content=\"Limes\"><meta property=\"twitter:description\"
+        content=\"Live generated, Improvised, algorithmically composed stuff.\r\nFor
+        Audiovisual Stuff visit my website: http://patriklechner.tumblr.com/ \r\nOr
+        Vimeo Account: http://vimeo.com/titled\"><meta property=\"twitter:card\" content=\"player\"><meta
+        property=\"twitter:player\" content=\"https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F885838495&amp;auto_play=false&amp;show_artwork=true&amp;visual=true&amp;origin=twitter\"><meta
+        property=\"twitter:url\" content=\"https://soundcloud.com/titled/limes\"><meta
+        property=\"twitter:player:height\" content=\"400\"><meta property=\"twitter:player:width\"
+        content=\"435\"><meta property=\"twitter:image\" content=\"https://i1.sndcdn.com/artworks-pLz3hPCKRGVde2Qh-EsnTfg-t500x500.jpg\"><meta
+        property=\"twitter:app:url:googleplay\" content=\"soundcloud://sounds:885838495\"><meta
+        property=\"twitter:app:url:iphone\" content=\"soundcloud://sounds:885838495\"><meta
+        property=\"twitter:app:url:ipad\" content=\"soundcloud://sounds:885838495\"><meta
+        property=\"al:ios:app_name\" content=\"SoundCloud\"><meta property=\"al:ios:app_store_id\"
+        content=\"336353151\"><meta property=\"al:android:app_name\" content=\"SoundCloud\"><meta
+        property=\"al:android:package\" content=\"com.soundcloud.android\"><meta property=\"og:type\"
+        content=\"music.song\"><meta property=\"og:url\" content=\"https://soundcloud.com/titled/limes\"><meta
+        property=\"og:title\" content=\"Limes\"><meta property=\"og:image\" content=\"https://i1.sndcdn.com/artworks-pLz3hPCKRGVde2Qh-EsnTfg-t500x500.jpg\"><meta
+        property=\"og:image:width\" content=\"500\"><meta property=\"og:image:height\"
+        content=\"500\"><meta property=\"og:description\" content=\"Live generated,
+        Improvised, algorithmically composed stuff.\r\nFor Audiovisual Stuff visit
+        my website: http://patriklechner.tumblr.com/ \r\nOr Vimeo Account: http://vimeo.com/titled\"><meta
+        property=\"al:web:should_fallback\" content=\"false\"><meta property=\"al:ios:url\"
+        content=\"soundcloud://sounds:885838495\"><meta property=\"al:android:url\"
+        content=\"soundcloud://sounds:885838495\"><meta property=\"soundcloud:user\"
+        content=\"https://soundcloud.com/titled\"><meta property=\"soundcloud:play_count\"
+        content=\"175\"><meta property=\"soundcloud:download_count\" content=\"0\"><meta
+        property=\"soundcloud:comments_count\" content=\"3\"><meta property=\"soundcloud:like_count\"
+        content=\"16\">\n<link rel=\"canonical\" href=\"https://soundcloud.com/titled/limes\"><link
+        rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"https://m.soundcloud.com/titled/limes\"><link
+        rel=\"alternate\" type=\"text/xml+oembed\" href=\"https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Ftitled%2Flimes&amp;format=xml\"><link
+        rel=\"alternate\" type=\"text/json+oembed\" href=\"https://soundcloud.com/oembed?url=https%3A%2F%2Fsoundcloud.com%2Ftitled%2Flimes&amp;format=json\"><link
+        rel=\"author\" href=\"/titled\"><link rel=\"alternate\" href=\"android-app://com.soundcloud.android/soundcloud/sounds:885838495\"><link
+        rel=\"alternate\" href=\"ios-app://336353151/soundcloud/sounds:885838495\">\n<meta
+        name=\"application-name\" content=\"SoundCloud\">\n<meta name=\"msapplication-tooltip\"
+        content=\"Launch SoundCloud\">\n<meta name=\"msapplication-TileImage\" content=\"https://a-v2.sndcdn.com/assets/images/sc-icons/win8-2dc974a18a.png\">\n<meta
+        name=\"msapplication-TileColor\" content=\"#ff5500\">\n<meta name=\"msapplication-starturl\"
+        content=\"https://soundcloud.com\">\n<link href=\"https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico\"
+        rel=\"icon\">\n<link href=\"https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png\"
+        rel=\"apple-touch-icon\">\n<link href=\"https://a-v2.sndcdn.com/assets/images/sc-icons/fluid-b4e7a64b8b.png\"
+        rel=\"fluid-icon\">\n<script>!function(){var o,a,e;function i(a){return a.test(o)}o=window.navigator.userAgent.toLowerCase();var
+        r,n,t,s=void 0!==window.opera&&\"[object Opera]\"===window.opera.toString(),p=o.match(/\\sopr\\/([0-9]+)\\./),d=i(/chrome/),c=i(/webkit/),m=!d&&i(/safari/),w=!s&&i(/msie/),f=!c&&i(/gecko/);r=p?parseInt(p[1],10):(t=o.match(/(opera|chrome|safari|firefox|msie)\\/?\\s*(\\.?\\d+(\\.\\d+)*)/i))&&(n=o.match(/version\\/([.\\d]+)/i))?parseInt(n[1],10):t?parseInt(t[2],10):null;var
+        h=i(/mobile|android|iphone|ipod|symbianos|nokia|s60|playbook|playstation/);f&&(e=(a=o.match(/(firefox)\\/?\\s*(\\.?\\d+(\\.\\d+)*)/i))&&a.length>1&&parseInt(a[2],10)>=41),r&&!h&&(d&&!p&&r<40||f&&!p&&!1===e||m&&r<8||w&&r<11||s&&r<13||p&&r<27)&&(window.__sc_abortApp=!0)}()</script>\n<link
+        rel=\"stylesheet\" href=\"https://style.sndcdn.com/css/interstate-a86f07cf94ae5a496b24.css\">\n<link
+        rel=\"stylesheet\" href=\"https://a-v2.sndcdn.com/assets/css/app-2d89b1edbff33aba790c.css\">\n</head>\n<body
+        class=\"sc-classic ot-hide-banner\">\n\n<div id=\"app\">\n<style>.header{width:100%;background:var(--background-surface-color);height:46px}.sc-classic
+        .header{background:#333}.header__logo{background:var(--background-surface-color)}.sc-classic
+        .header__logo{background:#333}.header__logoLink{background:transparent url(https://a-v2.sndcdn.com/assets/images/header/brand-1b72dd8210.svg)
+        no-repeat 0 11px;background-size:49px 22px;display:block;height:46px;width:49px;margin-right:23px}.sc-classic
+        .header__logoLink{background-image:url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a472bf.png);background-position-x:12px;background-size:48px
+        22px;width:69px;margin-right:unset}.header__logoLink:focus{background-color:rgba(255,72,0,.8);outline:0}#header__loading{margin:13px
+        auto 0;width:16px;background:url(https://a-v2.sndcdn.com/assets/images/loader-dark-45940ae3d4.gif)
+        center no-repeat;background-size:16px 16px}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi),(min-resolution:2dppx){.sc-classic
+        .header__logoLink{background-image:url(https://a-v2.sndcdn.com/assets/images/header/cloud@2x-e5fba4606d.png)}}</style>\n<div
+        role=\"banner\" class=\"header sc-selection-disabled show fixed g-dark g-z-index-header\">\n<div
+        class=\"header__inner l-container l-fullwidth\">\n<div class=\"header__left
+        left\">\n<div class=\"header__logo left\">\n<a href=\"/\" title=\"Home\" class=\"header__logoLink
+        sc-border-box sc-ir\">SoundCloud</a>\n</div>\n</div>\n<div id=\"header__loading\"
+        class=\"sc-hidden\"></div>\n</div>\n</div>\n<script>window.setTimeout((function(){if(!window.__sc_abortApp){var
+        e=window.document.getElementById(\"header__loading\");e&&(e.className=\"\")}}),6e3)</script>\n<style>.errorPage__inner{width:580px;margin:0
+        auto;position:relative;padding-top:460px;background:url(https://a-v2.sndcdn.com/assets/images/errors/500-e5a180b7a8.png)
+        no-repeat 50% 80px;text-align:center;transition:all 1s linear}.errorTitle{margin-bottom:10px;font-size:30px}.errorText{line-height:28px;color:#666;font-size:20px}.errorButtons{margin-top:30px}@media
+        (max-width:1280px){.errorPage__inner{background-size:80%}}</style>\n<noscript
+        class=\"errorPage__inner\">\n<div class=\"errorPage__inner\">\n<p class=\"errorTitle\">JavaScript
+        is disabled</p>\n<p class=\"errorText sc-font-light\">You need to enable JavaScript
+        to use SoundCloud</p>\n<div class=\"errorButtons\">\n<a href=\"http://www.enable-javascript.com/\"
+        target=\"_blank\" class=\"sc-button sc-button-medium\">Show me how to enable
+        it</a>\n</div>\n</div>\n</noscript>\n<noscript><article itemscope itemtype=\"http://schema.org/MusicRecording\">\n
+        \ <header>\n    <h1 itemprop=\"name\"><a itemprop=\"url\" href=\"/titled/limes\">Limes</a>\nby
+        <a href=\"/titled\">Patrik Lechner</a></h1>\npublished on <time pubdate>2020-09-01T19:17:42Z</time>\n\n
+        \     <meta itemprop=\"duration\" content=\"PT00H04M37S\" />\n\n        <meta
+        itemprop=\"interactionCount\" content=\"UserLikes:16\" />\n        <meta itemprop=\"interactionCount\"
+        content=\"UserDownloads:0\" />\n        <meta itemprop=\"interactionCount\"
+        content=\"UserComments:3\" />\n\n      <div itemscope itemprop=\"audio\" itemtype=\"http://schema.org/AudioObject\"><meta
+        itemprop=\"embedUrl\" content=\"https://w.soundcloud.com/player/?url&#x3D;https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F885838495&amp;auto_play&#x3D;false&amp;show_artwork&#x3D;true&amp;visual&#x3D;true&amp;origin&#x3D;schema.org\"
+        /><meta itemprop=\"height\" content=\"400px\" /></div>\n      <div itemscope
+        itemprop=\"byArtist\" itemtype=\"http://schema.org/MusicGroup\"><meta itemprop=\"name\"
+        content=\"Patrik Lechner\" /><meta itemprop=\"url\" content=\"/titled\" /></div>\n
+        \     <div itemscope itemprop=\"provider\" itemtype=\"http://schema.org/Organization\"><meta
+        itemprop=\"name\" content=\"SoundCloud\" /><meta itemprop=\"image\" content=\"http://developers.soundcloud.com/assets/logo_white-8bf7615eb575eeb114fc65323068e1e4.png\"
+        /></div>\n  </header>\n  <p>\n    <img src=\"https://i1.sndcdn.com/artworks-pLz3hPCKRGVde2Qh-EsnTfg-t500x500.jpg\"
+        width=\"500\" height=\"500\" alt=\"Limes\" itemprop=\"image\">\n    \n    <meta
+        itemprop=\"description\" content=\"\" />\n  </p>\n\n    <section class=\"comments\">\n
+        \     <h2>Comment by <a href=\"/titled\">Patrik Lechner</a></h2>\n<p>@faktor4:
+        danke!</p>\n<time pubdate>2020-12-15T11:05:33Z</time>\n      <h2>Comment by
+        <a href=\"/faktor4\">FAKTOR4</a></h2>\n<p>nice Oida :)</p>\n<time pubdate>2020-12-09T21:05:31Z</time>\n
+        \     <h2>Comment by <a href=\"/denis-rysavy\">Rysavy</a></h2>\n<p>lovely
+        ,3</p>\n<time pubdate>2020-11-18T21:21:05Z</time>\n    </section>\n\n  <footer>\n
+        \     <ul>\n  <li><a href=\"/titled/limes/likes\">Users who like Limes</a></li>\n
+        \ <li><a href=\"/titled/limes/reposts\">Users who reposted Limes</a></li>\n
+        \ <li><a href=\"/titled/limes/sets\">Playlists containing Limes</a></li>\n
+        \ <li><a href=\"/titled/limes/recommended\">More tracks like Limes</a></li>\n</ul>\n
+        \   License: all-rights-reserved\n  </footer>\n</article>\n</noscript>\n<style>#updateBrowserMessage{width:600px;margin:0
+        auto;position:relative;padding-top:410px;background:url(https://a-v2.sndcdn.com/assets/images/errors/browser-9cdd4e6df7.png)
+        no-repeat 50% 130px;text-align:center;display:none}#updateBrowserMessage .messageText{line-height:26px;font-size:20px;margin-bottom:5px}#updateBrowserMessage
+        .downloadLinks{margin-top:0}</style>\n<div id=\"updateBrowserMessage\">\n<p
+        class=\"messageText sc-text-light sc-text-secondary\">\nYour current browser
+        isn't compatible with SoundCloud. <br>\nPlease download one of our supported
+        browsers.\n<a href=\"https://help.soundcloud.com/hc/articles/115003564308-Technical-requirements\">Need
+        help?</a>\n</p>\n<div class=\"downloadLinks sc-type-h3 sc-text-h3 sc-text-light
+        sc-text-secondary\">\n<a href=\"http://google.com/chrome\" target=\"_blank\"
+        title=\"Chrome\">Chrome</a>\n| <a href=\"http://firefox.com\" target=\"_blank\"
+        title=\"Firefox\">Firefox</a> |\n<a href=\"http://apple.com/safari\" target=\"_blank\"
+        title=\"Safari\">Safari</a>\n|\n<a href=\"http://windows.microsoft.com/ie\"
+        target=\"_blank\" title=\"Internet Explorer\">Internet Explorer</a>\n</div>\n</div>\n<script>window.__sc_abortApp&&(window.document.getElementById(\"updateBrowserMessage\").style.display=\"block\")</script>\n<div
+        id=\"error__timeout\" class=\"errorPage__inner sc-hidden\">\n<p class=\"errorTitle
+        sc-type-h1 sc-text-h1\">Sorry! Something went wrong</p>\n<div class=\"errorText
+        sc-font-light\">\n<p>Is your network connection unstable or browser outdated?</p>\n</div>\n<div
+        class=\"errorButtons\">\n<a class=\"sc-button\" href=\"https://help.soundcloud.com\"
+        target=\"_blank\" id=\"try-again\">I need help</a>\n</div>\n</div>\n<script>function
+        displayError(){if(!window.__sc_abortApp){var r=window.document,e=r.getElementById(\"error__timeout\"),o=r.getElementById(\"header__loading\");e&&o&&(e.className=\"errorPage__inner\",o.className=\"sc-hidden\")}}window.setTimeout(displayError,15e3),window.onerror=displayError</script>\n<p>\n<a
+        href=\"/popular/searches\" title=\"Popular searches\">Popular searches</a>\n</p>\n</div>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/52-35c65882.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/50-607b617d.js\"></script>\n<script
+        src=\"https://cdn.cookielaw.org/consent/7e62c772-c97a-4d95-8d0a-f99bbeadcf61/otSDKStub.js\"\n
+        \   data-document-language=\"true\" type=\"text/javascript\" charset=\"UTF-8\"\n
+        \   data-domain-script=\"7e62c772-c97a-4d95-8d0a-f99bbeadcf61\" ></script>\n<style>\n
+        \ body.ot-hide-banner #onetrust-banner-sdk {\n    visibility: hidden;\n    transform:
+        translateY(110%);\n  }\n  #onetrust-banner-sdk {\n    transition: transform
+        1s ease 200ms;\n    transform: translateY(0%);\n  }\n  body.ot-hide-banner
+        .onetrust-pc-dark-filter {\n    background: initial;\n    width: initial;\n
+        \   height: initial;\n    overflow: initial;\n    position: initial;\n  }\n</style>\n<script
+        type=\"text/javascript\">\n  (function (global) {\n    function OptanonWrapper()
+        {\n      var activeGroups = (global.OptanonActiveGroups || '').split(',');\n\n
+        \     if (Array.isArray(OptanonWrapper.callbacks)) {\n        for (var i =
+        0, max = OptanonWrapper.callbacks.length; i < max; i++) {\n          try {\n
+        \           OptanonWrapper.callbacks[i](activeGroups);\n          } catch
+        (e) {}\n        }\n      }\n\n      OptanonWrapper.isLoaded = true;\n    };\n\n
+        \   OptanonWrapper.callbacks = [];\n    OptanonWrapper.isLoaded = false;\n\n
+        \   global.OptanonWrapper = OptanonWrapper;\n  }(window));\n</script>\n\n<script
+        src=\"https://a-v2.sndcdn.com/assets/17-10e66368.js\" crossorigin></script>\n<script>window.__sc_version=\"1624267273\"</script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/51-de23ee89.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/1-bd4d80f7.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/2-044ff5ee.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/3-3c36cf46.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/0-938cea93.js\"></script>\n<script
+        crossorigin src=\"https://a-v2.sndcdn.com/assets/49-9444ca86.js\"></script>\n<script>!function(e,n){var
+        t,c;e=e.bind(null,n),\"function\"==typeof window.webpackJsonp?window.webpackJsonp([],{0:e}):(t=n.reduce(function(e,n){return
+        e.concat(n.chunks)},[]).filter(function(e,n,t){return t.indexOf(e)===n}),(c={})[n=\"__sc_data_rehydration_module__\"]=e,(window.webpackJsonp=window.webpackJsonp||[]).push([[],c,[[n].concat(t)]]))}(function(e,n,t,c){var
+        o=Date.now(),a=[\"resource_type\",\"get\",\"set\",\"addSubmodel\",\"release\"];function
+        r(t){var n;return(n=t,a.every(function(e){return e in n.prototype}))?function(e){var
+        n=o;e.lastFetchTime&&(n=e.lastFetchTime,delete e.lastFetchTime),(e=new t(e,{parse:!0,__hydrate:!0})).lastFetchTime=n,e.release()}:t}e.forEach(function(e){try{var
+        n=r(c(e.id));e.data.forEach(function(e){n(e)})}catch(e){}})},[{\"id\":2025,\"chunks\":[0],\"data\":[{\"features\":[\"v2_enable_sourcepoint_tcfv2\",\"v2_snippet_ux_skip_snippets_in_play_queue\",\"v2_post_with_caption\",\"v2_direct_support_link\",\"v2_enable_onetrust\",\"v2_use_onetrust_eu2\",\"v2_use_onetrust_us\",\"v2_use_new_connect\",\"v2_tags_recent_tracks\",\"v2_enable_pwa\",\"v2_stories\",\"v2_show_pro_unlimited_badge_profile\",\"mobi_use_onetrust_eu1\",\"mobi_use_onetrust_gb\",\"v2_hide_pro_badge_on_avatar\",\"mobi_social_sharing\",\"v2_can_request_verified_badge\",\"mobi_use_onetrust_eu4\",\"featured_artists_banner\",\"v2_repost_redirect_page\",\"v2_use_onetrust_gb\",\"v2_hq_file_storage_release\",\"v2_use_onetrust_eu4\",\"mobi_use_onetrust_eu3\",\"mobi_use_onetrust_elsewhere\",\"v2_show_verified_badge\",\"v2_use_onetrust_eu3\",\"mobi_use_onetrust_us\",\"v2_oscp_german_tax_fields_support\",\"v2_use_onetrust_eu1\",\"v2_enable_sourcepoint\",\"mobi_use_onetrust_eu2\",\"v2_use_onetrust_elsewhere\",\"mobi_sign_in_experiment\",\"mobi_enable_onetrust\",\"v2_can_see_insights\",\"mobi_trinity\"]}]},{\"id\":258,\"chunks\":[49],\"data\":[{\"allows_messages_from_unfollowed_users\":false,\"analytics_opt_in\":true,\"communications_opt_in\":true,\"targeted_advertising_opt_in\":false,\"legislation\":[]}]},{\"id\":2038,\"chunks\":[49],\"data\":[{\"country_code\":\"AT\",\"country_name\":\"Austria\",\"region\":\"09\",\"city\":\"Vienna\",\"postal_code\":\"1170\",\"latitude\":48.23429870605469,\"longitude\":16.292999267578125}]},{\"id\":2026,\"chunks\":[0],\"data\":[{}]},{\"id\":1156,\"chunks\":[0],\"data\":[\"754447-169882-964952-929744\"]},{\"id\":34,\"chunks\":[49],\"data\":[{\"avatar_url\":\"https://i1.sndcdn.com/avatars-000003626708-58tmus-large.jpg\",\"city\":\"vienna\",\"comments_count\":7,\"country_code\":\"AT\",\"created_at\":\"2010-08-08T13:31:26Z\",\"creator_subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\"}}],\"creator_subscription\":{\"product\":{\"id\":\"creator-pro-unlimited\"}},\"description\":\"Live
+        generated, Improvised, algorithmically composed stuff.\\r\\nFor Audiovisual
+        Stuff visit my website: http://patriklechner.tumblr.com/ \\r\\nOr Vimeo Account:
+        http://vimeo.com/titled\",\"followers_count\":333,\"followings_count\":161,\"first_name\":\"patrik\",\"full_name\":\"patrik
+        lechner\",\"groups_count\":0,\"id\":1471691,\"kind\":\"user\",\"last_modified\":\"2020-05-13T10:47:13Z\",\"last_name\":\"lechner\",\"likes_count\":339,\"playlist_likes_count\":4,\"permalink\":\"titled\",\"permalink_url\":\"https://soundcloud.com/titled\",\"playlist_count\":0,\"reposts_count\":null,\"track_count\":42,\"uri\":\"https://api.soundcloud.com/users/1471691\",\"urn\":\"soundcloud:users:1471691\",\"username\":\"Patrik
+        Lechner\",\"verified\":false,\"visuals\":{\"urn\":\"soundcloud:users:1471691\",\"enabled\":true,\"visuals\":[{\"urn\":\"soundcloud:visuals:18680000\",\"entry_time\":0,\"visual_url\":\"https://i1.sndcdn.com/visuals-000001471691-G3xlDE-original.jpg\"}],\"tracking\":null},\"badges\":{\"pro\":false,\"pro_unlimited\":true,\"verified\":false},\"station_permalink\":\"artist-stations:1471691\",\"url\":\"/titled\"}]},{\"id\":20,\"chunks\":[49],\"data\":[{\"artwork_url\":\"https://i1.sndcdn.com/artworks-pLz3hPCKRGVde2Qh-EsnTfg-large.jpg\",\"caption\":null,\"commentable\":true,\"comment_count\":3,\"created_at\":\"2020-09-01T19:17:42Z\",\"description\":\"\",\"downloadable\":false,\"download_count\":0,\"duration\":277969,\"full_duration\":277969,\"embeddable_by\":\"all\",\"genre\":\"\",\"has_downloads_left\":false,\"id\":885838495,\"kind\":\"track\",\"label_name\":null,\"last_modified\":\"2020-09-01T19:23:47Z\",\"license\":\"all-rights-reserved\",\"likes_count\":16,\"permalink\":\"limes\",\"permalink_url\":\"https://soundcloud.com/titled/limes\",\"playback_count\":175,\"public\":true,\"publisher_metadata\":{\"id\":885838495,\"urn\":\"soundcloud:tracks:885838495\",\"contains_music\":true},\"purchase_title\":null,\"purchase_url\":null,\"release_date\":null,\"reposts_count\":6,\"secret_token\":null,\"sharing\":\"public\",\"state\":\"finished\",\"streamable\":true,\"tag_list\":\"\",\"title\":\"Limes\",\"track_format\":\"single-track\",\"uri\":\"https://api.soundcloud.com/tracks/885838495\",\"urn\":\"soundcloud:tracks:885838495\",\"user_id\":1471691,\"visuals\":null,\"waveform_url\":\"https://wave.sndcdn.com/UUlamVk0hrMY_m.json\",\"display_date\":\"2020-09-01T19:23:47Z\",\"media\":{\"transcodings\":[{\"url\":\"https://api-v2.soundcloud.com/media/soundcloud:tracks:885838495/2f47c79a-cede-42f4-b5ca-4e1aca15ebc2/stream/hls\",\"preset\":\"mp3_0_1\",\"duration\":277969,\"snipped\":false,\"format\":{\"protocol\":\"hls\",\"mime_type\":\"audio/mpeg\"},\"quality\":\"sq\"},{\"url\":\"https://api-v2.soundcloud.com/media/soundcloud:tracks:885838495/2f47c79a-cede-42f4-b5ca-4e1aca15ebc2/stream/progressive\",\"preset\":\"mp3_0_1\",\"duration\":277969,\"snipped\":false,\"format\":{\"protocol\":\"progressive\",\"mime_type\":\"audio/mpeg\"},\"quality\":\"sq\"},{\"url\":\"https://api-v2.soundcloud.com/media/soundcloud:tracks:885838495/3ffc1a33-3bfd-468e-b43f-54b00a17abdb/stream/hls\",\"preset\":\"opus_0_0\",\"duration\":277949,\"snipped\":false,\"format\":{\"protocol\":\"hls\",\"mime_type\":\"audio/ogg;
+        codecs=\\\"opus\\\"\"},\"quality\":\"sq\"}]},\"station_permalink\":\"track-stations:885838495\",\"monetization_model\":\"BLACKBOX\",\"policy\":\"MONETIZE\",\"user\":{\"avatar_url\":\"https://i1.sndcdn.com/avatars-000003626708-58tmus-large.jpg\",\"city\":\"vienna\",\"comments_count\":7,\"country_code\":\"AT\",\"created_at\":\"2010-08-08T13:31:26Z\",\"creator_subscriptions\":[{\"product\":{\"id\":\"creator-pro-unlimited\"}}],\"creator_subscription\":{\"product\":{\"id\":\"creator-pro-unlimited\"}},\"description\":\"Live
+        generated, Improvised, algorithmically composed stuff.\\r\\nFor Audiovisual
+        Stuff visit my website: http://patriklechner.tumblr.com/ \\r\\nOr Vimeo Account:
+        http://vimeo.com/titled\",\"followers_count\":333,\"followings_count\":161,\"first_name\":\"patrik\",\"full_name\":\"patrik
+        lechner\",\"groups_count\":0,\"id\":1471691,\"kind\":\"user\",\"last_modified\":\"2020-05-13T10:47:13Z\",\"last_name\":\"lechner\",\"likes_count\":339,\"playlist_likes_count\":4,\"permalink\":\"titled\",\"permalink_url\":\"https://soundcloud.com/titled\",\"playlist_count\":0,\"reposts_count\":null,\"track_count\":42,\"uri\":\"https://api.soundcloud.com/users/1471691\",\"urn\":\"soundcloud:users:1471691\",\"username\":\"Patrik
+        Lechner\",\"verified\":false,\"visuals\":{\"urn\":\"soundcloud:users:1471691\",\"enabled\":true,\"visuals\":[{\"urn\":\"soundcloud:visuals:18680000\",\"entry_time\":0,\"visual_url\":\"https://i1.sndcdn.com/visuals-000001471691-G3xlDE-original.jpg\"}],\"tracking\":null},\"badges\":{\"pro\":false,\"pro_unlimited\":true,\"verified\":false},\"station_permalink\":\"artist-stations:1471691\"}}]}]);</script>\n</body>\n</html>\n"
+  recorded_at: Fri, 25 Jun 2021 07:34:14 GMT
+recorded_with: VCR 6.0.0
