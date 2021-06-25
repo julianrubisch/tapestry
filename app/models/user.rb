@@ -24,4 +24,5 @@ class User < ApplicationRecord
 
   has_many :list_memberships
   has_many :lists, through: :list_memberships
+  has_one :inbox, -> { where(inbox: true) }, class_name: "List", foreign_key: :owner_id, inverse_of: :owner, dependent: :destroy
 end

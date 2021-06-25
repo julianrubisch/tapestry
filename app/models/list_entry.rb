@@ -35,6 +35,8 @@ class ListEntry < ApplicationRecord
 
   validates :url, :title, :artist, presence: true
 
+  broadcasts_to ->(list_entry) { :list_entries }, inserts_by: :append, target: "list_entries_inner"
+
   def self.init_from_url(url:, list:)
     return new(list: list) if url.blank?
 

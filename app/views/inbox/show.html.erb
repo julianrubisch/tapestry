@@ -1,2 +1,13 @@
-<h1>Inbox#show</h1>
-<p>Find me in app/views/inbox/show.html.erb</p>
+<div class="mb-8">
+  <%= turbo_frame_tag "list_entry_form" do %>
+    <%= render "list_entries/form", list_entry: @list_entry %>
+  <% end %>
+</div>
+
+<%= turbo_stream_from "list_entries" %>
+
+<%= turbo_frame_tag "list_entries" do %>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2" id="list_entries_inner">
+    <%= render @list_entries %>
+  </div>
+<% end %>

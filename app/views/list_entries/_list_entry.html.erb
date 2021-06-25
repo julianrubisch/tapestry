@@ -1,0 +1,7 @@
+<%= turbo_frame_tag list_entry do %>
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 border border-gray-300">
+    <div class="px-4 py-5 sm:p-6">
+      <%= link_to "#{list_entry.artist} #{list_entry.title}", list_entry.url %>
+    </div>
+  </div>
+<% end %>

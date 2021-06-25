@@ -23,11 +23,12 @@
 class List < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
-  
+
   belongs_to :owner, class_name: "User"
 
   has_many :list_memberships
   has_many :users, through: :list_memberships
+  has_many :list_entries
 
   validates :inbox, uniqueness: {scope: :owner, message: "A user can have only one inbox"}
 end
