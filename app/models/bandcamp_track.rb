@@ -10,4 +10,11 @@
 #  updated_at :datetime         not null
 #
 class BandcampTrack < Track
+  after_create_commit :scrape_url
+
+  store :meta, accessors: [:name, :image, :keywords, :duration, :byArtist, :additionalProperty]
+
+  def scrape_url
+    BandcampTrackScraperJob.perform_later self
+  end
 end

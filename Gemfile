@@ -43,34 +43,47 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 3.26"
+  # The next generation developer focused tool for automated testing of webapps
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
 
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
   gem "vcr"
+  # Library for stubbing HTTP requests in Ruby.
   gem "webmock"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# HTML over the wire.
 gem "hotwire-rails", "~> 0.1.3"
 
+# Flexible authentication solution for Rails with Warden
 gem "devise", "~> 4.8"
 
+# Simple, efficient background processing for Ruby
 gem "sidekiq", "~> 6.2"
 
 group :development, :test do
+  # Use Pry as your rails console
   gem "pry-rails"
+  # Ruby Style Guide, with linter & automatic code fixer
   gem "standard", "~> 1.1"
 end
 
 group :development do
+  # Annotates Rails Models, routes, fixtures, and others based on the database schema.
   gem "annotate"
-end
-
-gem "friendly_id", "~> 5.4"
-
-group :development do
+  # Solargraph plugin that adds Rails-specific code through a Convention
   gem "solargraph-rails", "0.2.1"
 end
+
+# A comprehensive slugging and pretty-URL plugin.
+gem "friendly_id", "~> 5.4"
+
+# HTTP/REST API client library.
+gem "faraday"
+# Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby.
+gem "nokogiri"
