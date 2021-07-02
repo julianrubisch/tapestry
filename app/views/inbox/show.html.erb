@@ -7,7 +7,7 @@
 <%= turbo_stream_from "list_entries" %>
 
 <%= turbo_frame_tag "list_entries" do %>
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2" id="list_entries_inner">
+  <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2" id="list_entries_inner">
     <%= render @list_entries %>
-  </div>
+  </ul>
 <% end %>

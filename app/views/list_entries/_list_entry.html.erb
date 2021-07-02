@@ -1,7 +1,22 @@
 <%= turbo_frame_tag list_entry do %>
-  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 border border-gray-300">
-    <div class="px-4 py-5 sm:p-6">
-      <%= link_to "#{list_entry.artist} #{list_entry.title}", list_entry.url %>
+  <li class="col-span-1 flex shadow-sm rounded-md">
+    <div class="flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md">
+      <% if list_entry.listable.image.present? %>
+        <%= image_tag list_entry.listable.image, alt: list_entry.title, class: "object-cover rounded-l-md" %>
+      <% end %>
     </div>
-  </div>
+    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+      <div class="flex-1 px-4 py-2 text-sm truncate">
+        <%= link_to list_entry.url do %>
+          <%= content_tag :div, list_entry.title %>
+          <%= content_tag :p, list_entry.artist, class: "text-gray-500" %>
+        <% end %>
+      </div>
+      <div class="flex-1 pr-2 w-1/2">
+        <% if list_entry.listable.audio_url.present? %>
+          <%= audio_tag list_entry.listable.audio_url, controls: true, class: "w-full" %>
+        <% end %>
+      </div>
+    </div>
+  </li>
 <% end %>
