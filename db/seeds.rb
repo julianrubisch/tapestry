@@ -7,3 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create email: "admin@tapestry.fm", password: "test123", password_confirmation: "test123"
 user.lists << List.new(inbox: true, owner: user)
+
+# create some tracks
+track1 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/kapteyn-b", list: user.inbox)
+track1.save
+
+track2 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/proxima-a", list: user.inbox)
+track2.save
+
+# add them to a new list
+tapestry = List.create(owner: user, name: "Ambient stuff")
+tapestry.list_entries << track1
+tapestry.list_entries << track2
