@@ -17,4 +17,8 @@ class BandcampTrack < Track
   def scrape_url
     BandcampTrackScraperJob.perform_later self
   end
+
+  def duration
+    ActiveSupport::Duration.parse(super.start_with?("PT") ? super : super.insert(1, "T"))
+  end
 end
