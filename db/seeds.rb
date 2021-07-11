@@ -9,11 +9,12 @@ user = User.create email: "admin@tapestry.fm", password: "test123", password_con
 user.lists << List.new(inbox: true, owner: user)
 
 # create some tracks
-track1 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/kapteyn-b", list: user.inbox)
-track1.save
+track1 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/kapteyn-b")
 
-track2 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/proxima-a", list: user.inbox)
-track2.save
+track2 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/proxima-a")
+
+user.inbox.list_entries << track1
+user.inbox.list_entries << track2
 
 # add them to a new list
 tapestry = List.create(owner: user, name: "Ambient stuff")
