@@ -1,19 +1,122 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { SVG, Rect } from "@svgdotjs/svg.js";
 
-// @customElement("tapestry-element")
 export default class TapestryElement extends LitElement {
-  connectedCallback() {
-    super.connectedCallback();
+  static get properties() {
+    return {
+      rows: { type: Number },
+      maxDuration: { type: Number },
+      activeId: { type: String },
+      items: { type: Array }
+    };
+  }
 
-    console.log("connected");
+  constructor() {
+    super();
+
+    this.rows = 6;
+    this.maxDuration = 30;
+    this.activeId = "0";
+    this.items = [];
+  }
+
+  firstUpdated() {
+    this.setup();
+    this.draw();
+  }
+
+  updated(changedProperties) {
+    this.reset();
+    this.draw();
+  }
+
+  setup() {
+    this.svg = SVG()
+      .addTo(this.renderRoot.querySelector(".svg-root"))
+      .size("100%", "100%")
+      .viewbox(0, 0, 100, 100);
+
+    this.group = this.svg.group();
+  }
+
+  reset() {
+    this.group.remove();
+    this.group = this.svg.group();
+  }
+
+  draw() {
+    this.transformedRows.forEach((row, index) => {
+      let xTally = 0.0;
+      row.forEach(item => {
+        const rect = this.group
+          .rect(item.duration * 100 - 4, 100 / this.rows - 4)
+          .fill(item.color)
+          .x(xTally + 2)
+          .y((index * 100) / this.rows + 2);
+
+        if (item.id == this.activeId) {
+          rect
+            .animate(1200, 0, "now")
+            .ease("<>")
+            .loop(Infinity, true)
+            .attr("opacity", 0.3);
+        } else {
+          rect.attr("opacity", 0.75);
+        }
+
+        xTally = xTally + item.duration * 100;
+      });
+    });
   }
 
   render() {
     return html`
-      Test
+      <div class="svg-root"></div>
     `;
+  }
+
+  get transformedRows() {
+    const chunkedRows = splitIntoChunks(
+      this.items.map(item => ({
+        ...item,
+        duration: item.duration / this.rowWidth
+      }))
+    );
+    return chunkedRows;
+  }
+
+  get rowWidth() {
+    return this.maxDuration / this.rows;
   }
 }
 
 customElements.define("tapestry-element", TapestryElement);
+
+const splitIntoChunks = items =>
+  items.reduce((memo, item) => processItem(memo, item), [[]]);
+
+const processItem = (memo, item) => {
+  const lastMemoItem = memo[memo.length - 1];
+
+  if (sum([...lastMemoItem.map(elem => elem.duration), item.duration]) > 1) {
+    const current = {
+      ...item,
+      duration: Math.min(
+        1 - sum(lastMemoItem.map(elem => elem.duration)),
+        item.duration
+      )
+    };
+    const remainder = { ...item, duration: item.duration - current.duration };
+
+    lastMemoItem.push(current);
+    memo.push([]);
+
+    // recurse
+    memo = processItem(memo, remainder);
+  } else {
+    lastMemoItem.push(item);
+  }
+  return memo;
+};
+
+const sum = items => items.reduce((memo, item) => memo + item, 0);
