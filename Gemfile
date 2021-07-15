@@ -87,3 +87,6 @@ gem "friendly_id", "~> 5.4"
 gem "faraday"
 # Nokogiri (鋸) makes it easy and painless to work with XML and HTML from Ruby.
 gem "nokogiri"
+
+# Higher-level data structures built on Redis.
+gem "kredis", github: "rails/kredis", branch: "main"
