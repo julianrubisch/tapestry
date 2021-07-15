@@ -1,0 +1,6 @@
+<div class="space-y-2">
+  <h3 class="text-lg leading-6 font-medium text-gray-900">
+    <%= track.name %>
+  </h3>
+  <%= audio_tag track.audio_url, controls: true, class: "w-full", autoplay: true, loop: false %>
+</div>
