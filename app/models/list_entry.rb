@@ -31,7 +31,7 @@ class ListEntry < ApplicationRecord
 
   acts_as_list scope: :list
 
-  belongs_to :list
+  belongs_to :list, touch: true
 
   delegated_type :listable, types: %w[Track Playlist]
 

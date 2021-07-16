@@ -25,6 +25,8 @@ class List < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  broadcasts
+
   belongs_to :owner, class_name: "User"
 
   has_many :list_memberships
