@@ -29,7 +29,7 @@ class List < ApplicationRecord
 
   has_many :list_memberships
   has_many :users, through: :list_memberships
-  has_many :list_entries
+  has_many :list_entries, -> { order(position: :asc) }
 
   validates :inbox, uniqueness: {scope: :owner, message: "A user can have only one inbox"}
 end

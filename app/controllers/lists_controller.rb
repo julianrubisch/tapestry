@@ -14,7 +14,7 @@ class ListsController < ApplicationController
 
   def set_active_track
     session["list_#{@list.id}"] ||= {}
-    session["list_#{@list.id}"][:active] ||= @list.list_entries.order(created_at: :asc).first
+    session["list_#{@list.id}"][:active] ||= @list.list_entries.first
     @active = session["list_#{@list.id}"][:active]
   end
 end

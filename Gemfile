@@ -90,3 +90,6 @@ gem "nokogiri"
 
 # Higher-level data structures built on Redis.
 gem "kredis", github: "rails/kredis", branch: "main"
+
+# A gem adding sorting, reordering capabilities to an active_record model, allowing it to act as a list
+gem "acts_as_list"

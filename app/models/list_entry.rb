@@ -29,6 +29,8 @@ class ListEntry < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  acts_as_list scope: :list
+
   belongs_to :list
 
   delegated_type :listable, types: %w[Track Playlist]

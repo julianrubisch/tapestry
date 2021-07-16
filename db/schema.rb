@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_190546) do
+ActiveRecord::Schema.define(version: 2021_07_16_072015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_190546) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "artist"
     t.string "slug"
+    t.integer "position"
+    t.index ["list_id", "position"], name: "index_list_entries_on_list_id_and_position", unique: true
     t.index ["list_id"], name: "index_list_entries_on_list_id"
     t.index ["slug"], name: "index_list_entries_on_slug", unique: true
   end
