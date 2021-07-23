@@ -2,5 +2,24 @@
   <h3 class="text-lg leading-6 font-medium text-gray-900">
     <%= track.name %>
   </h3>
-  <%= audio_tag track.audio_url, controls: true, class: "w-full", autoplay: true, loop: false %>
+
+  <div class="flex justify-between items-center space-x-2">
+    <%= button_to active_track_list_path(track.list),
+     method: :patch,
+     params: {list: {active_track_id: track.list_entry.higher_item&.listable&.id}},
+     disabled: !track.list_entry.higher_item.present?,
+     class: "inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 disabled:opacity-50"  do %>
+      <i class="fas fa-backward-step fa-lg"></i>  
+    <% end %>
+
+    <%= audio_tag track.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
+
+    <%= button_to active_track_list_path(track.list),
+     method: :patch,
+     params: {list: {active_track_id: track.list_entry.lower_item&.listable&.id}},
+     disabled: !track.list_entry.lower_item.present?,
+     class: "inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 disabled:opacity-50" do %>
+      <i class="fas fa-forward-step fa-lg"></i>  
+    <% end %>
+  </div> 
 </div>
