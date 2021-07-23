@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     resources :list_entries, only: :create
   end
 
-  resources :lists, only: :show
+  resources :lists, only: :show do
+    member do
+      authenticate :user do
+        patch "active_track"
+      end
+    end
+  end
+
   resources :tracks, only: :show
 end

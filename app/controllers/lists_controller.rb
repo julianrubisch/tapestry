@@ -6,7 +6,14 @@ class ListsController < ApplicationController
     authenticate_user! unless @list.public
   end
 
+  def active_track
+  end
+
   private
+
+  def active_track_params
+    params.require(:list).permit(:active_track_id)
+  end
 
   def set_list
     @list = List.friendly.find(params[:id])

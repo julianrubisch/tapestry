@@ -65,5 +65,9 @@
 
   <%= render @list %>
 
+  <%= form_with(model: @list, url: active_track_list_path(@list), id: dom_id(@list, :active_track)) do |f| %>
+    <%= f.hidden_field :active_track_id, {value: active.listable.id} %>
+  <% end %>
+
   <%= turbo_frame_tag "active_track", src: track_url(active.listable) if active.present? %>
 </div>

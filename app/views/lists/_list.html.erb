@@ -1,6 +1,6 @@
 <%# active = session["list_#{list.id}"][:active] %>
 
 <%= turbo_frame_tag @list, class: "border border-dashed border-2 border-gray-400 p-4" do %>
-  <tapestry-element maxduration="<%= list.max_duration %>" items="<%= list.list_entries.map { |entry| {id: entry.listable_id, duration: entry.listable.duration.in_minutes, color: ["#F87171", "#34D399", "#F472B6", "#4ADE80", "#38BDF8", "#818CF8"].sample} }.to_json %>" activeid="<%#= active&.listable&.id %>"></tapestry-element>
+  <tapestry-element maxduration="<%= list.max_duration %>" items="<%= list.list_entries.map { |entry| {id: entry.listable_id, duration: entry.listable.duration.in_minutes, color: ["#F87171", "#34D399", "#F472B6", "#4ADE80", "#38BDF8", "#818CF8"].sample} }.to_json %>" listid="<%= list.id %>" activeid="<%#= active&.listable&.id %>"></tapestry-element>
 
 <% end %>

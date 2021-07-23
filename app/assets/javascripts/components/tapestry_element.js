@@ -7,7 +7,8 @@ export default class TapestryElement extends LitElement {
       rows: { type: Number },
       maxDuration: { type: Number },
       activeId: { type: String },
-      items: { type: Array }
+      items: { type: Array },
+      listId: { type: String }
     };
   }
 
@@ -18,6 +19,7 @@ export default class TapestryElement extends LitElement {
     this.maxDuration = 30;
     this.activeId = "0";
     this.items = [];
+    this.listId = "0";
   }
 
   createRenderRoot() {
@@ -27,6 +29,10 @@ export default class TapestryElement extends LitElement {
   firstUpdated() {
     this.setup();
     this.draw();
+
+    this.activeTrackForm = document.querySelector(
+      `#active_track_list_${this.listId}`
+    );
   }
 
   updated(changedProperties) {
@@ -52,17 +58,18 @@ export default class TapestryElement extends LitElement {
     this.transformedRows.forEach((row, index) => {
       let xTally = 0.0;
       row.forEach(item => {
-        const link = this.group
-          .element("a")
-          .attr("href", `/tracks/${item.id}`)
-          .data("turbo-frame", "active_track");
-
-        const rect = new Rect()
-          .size(item.duration * 100 - 4, 100 / this.rows - 4)
+        const rect = this.group
+          .rect(item.duration * 100 - 4, 100 / this.rows - 4)
           .fill(item.color)
           .x(xTally + 2)
           .y((index * 100) / this.rows + 2)
-          .addTo(link);
+          .attr("style", "cursor: pointer;")
+          .click(e => {
+            e.preventDefault();
+            this.activeTrackForm.querySelector(`#list_active_track_id`).value =
+              item.id;
+            this.activeTrackForm.requestSubmit();
+          });
 
         if (item.id == this.activeId) {
           rect
