@@ -10,7 +10,9 @@ class PlayerComponent < ViewComponent::Base
   end
 
   def previous_track
-    if repeat && track.list_entry.first?
+    if shuffle
+      track.list.list_entries.sample
+    elsif repeat && track.list_entry.first?
       track.list.list_entries.last
     else
       track.list_entry.higher_item
@@ -18,7 +20,9 @@ class PlayerComponent < ViewComponent::Base
   end
 
   def next_track
-    if repeat && track.list_entry.last?
+    if shuffle
+      track.list.list_entries.sample
+    elsif repeat && track.list_entry.last?
       track.list.list_entries.first
     else
       track.list_entry.lower_item
