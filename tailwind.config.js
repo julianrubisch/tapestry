@@ -4,6 +4,7 @@ module.exports = {
   mode: "jit",
   purge: [
     "./app/**/*.html.erb",
+    "./app/components/**/*.rb",
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js"
   ],
