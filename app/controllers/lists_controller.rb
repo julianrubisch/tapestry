@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[show active_track]
-  before_action :set_active_track, only: :show
+  before_action :set_list, only: %i[show active_track toggle_repeat toggle_shuffle]
+  before_action :set_active_track, only: %i[show toggle_repeat toggle_shuffle]
 
   def show
     authenticate_user! unless @list.public
@@ -8,6 +8,18 @@ class ListsController < ApplicationController
 
   def active_track
     session["list_#{@list.id}"][:active] = Track.find(list_params[:active_track_id]).list_entry.to_gid.to_s
+
+    render turbo_stream: turbo_stream.replace(@list)
+  end
+
+  def toggle_repeat
+    session["list_#{@list.id}"][:repeat] = !session["list_#{@list.id}"].fetch("repeat", false)
+
+    render turbo_stream: turbo_stream.replace(@list)
+  end
+
+  def toggle_shuffle
+    session["list_#{@list.id}"][:shuffle] = !session["list_#{@list.id}"].fetch("shuffle", false)
 
     render turbo_stream: turbo_stream.replace(@list)
   end
