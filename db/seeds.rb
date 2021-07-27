@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create email: "admin@tapestry.fm", password: "test123", password_confirmation: "test123"
-user.lists << List.new(inbox: true, owner: user)
+user.lists << List.new(inbox: true, owner: user, max_duration: 0)
 
 # create some tracks
 track1 = ListEntry.init_from_url(url: "https://tropus.bandcamp.com/track/kapteyn-b")

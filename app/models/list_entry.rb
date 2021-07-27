@@ -10,17 +10,11 @@
 #  url           :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  list_id       :uuid             not null
 #  listable_id   :uuid
 #
 # Indexes
 #
-#  index_list_entries_on_list_id  (list_id)
-#  index_list_entries_on_slug     (slug) UNIQUE
-#
-# Foreign Keys
-#
-#  fk_rails_...  (list_id => lists.id)
+#  index_list_entries_on_slug  (slug) UNIQUE
 #
 
 require "open-uri"
@@ -29,9 +23,8 @@ class ListEntry < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  acts_as_list scope: :list
-
-  belongs_to :list, touch: true
+  has_many :list_entry_list_items
+  has_many :lists, through: :list_entry_list_items
 
   delegated_type :listable, types: %w[Track Playlist]
 
@@ -40,7 +33,7 @@ class ListEntry < ApplicationRecord
   broadcasts_to ->(list_entry) { :list_entries }, inserts_by: :append, target: "list_entries_inner"
 
   def self.init_from_url(url:, list: nil)
-    return new(list: list) if url.blank?
+    return new(lists: [list].compact) if url.blank?
 
     URI.open(url) do |uri|
       base_uri = uri.base_uri
@@ -58,7 +51,7 @@ class ListEntry < ApplicationRecord
         BandcampAlbum
       end
 
-      new listable: listable_type.new, url: base_uri, list: list, artist: $1, title: $2
+      new listable: listable_type.new, url: base_uri, lists: [list].compact, artist: $1, title: $2
     end
   end
 end

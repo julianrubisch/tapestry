@@ -10,17 +10,11 @@
 #  url           :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  list_id       :uuid             not null
 #  listable_id   :uuid
 #
 # Indexes
 #
-#  index_list_entries_on_list_id  (list_id)
-#  index_list_entries_on_slug     (slug) UNIQUE
-#
-# Foreign Keys
-#
-#  fk_rails_...  (list_id => lists.id)
+#  index_list_entries_on_slug  (slug) UNIQUE
 #
 require "test_helper"
 

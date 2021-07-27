@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_16_072015) do
+ActiveRecord::Schema.define(version: 2021_07_27_070917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -30,17 +30,23 @@ ActiveRecord::Schema.define(version: 2021_07_16_072015) do
   create_table "list_entries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "url"
     t.string "title"
-    t.uuid "list_id", null: false
     t.string "listable_type"
     t.uuid "listable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "artist"
     t.string "slug"
-    t.integer "position"
-    t.index ["list_id", "position"], name: "index_list_entries_on_list_id_and_position", unique: true
-    t.index ["list_id"], name: "index_list_entries_on_list_id"
     t.index ["slug"], name: "index_list_entries_on_slug", unique: true
+  end
+
+  create_table "list_entry_list_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "position"
+    t.uuid "list_id", null: false
+    t.uuid "list_entry_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_entry_id"], name: "index_list_entry_list_items_on_list_entry_id"
+    t.index ["list_id"], name: "index_list_entry_list_items_on_list_id"
   end
 
   create_table "list_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -93,7 +99,8 @@ ActiveRecord::Schema.define(version: 2021_07_16_072015) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "list_entries", "lists"
+  add_foreign_key "list_entry_list_items", "list_entries"
+  add_foreign_key "list_entry_list_items", "lists"
   add_foreign_key "list_memberships", "lists"
   add_foreign_key "list_memberships", "users"
   add_foreign_key "lists", "users", column: "owner_id"
