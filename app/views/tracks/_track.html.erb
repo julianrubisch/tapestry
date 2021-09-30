@@ -3,6 +3,6 @@
     <%= track.name %>
   </h3>
 
-  <%= render(PlayerComponent.new(track: track, repeat: session["list_#{track.list.id}"]["repeat"], shuffle: session["list_#{track.list.id}"]["shuffle"])) %>
+  <%= render(PlayerComponent.new(track: track, list: list, repeat: session[list.to_gid.to_s]["repeat"], shuffle: session[list.to_gid.to_s]["shuffle"])) %>
 </div>
 

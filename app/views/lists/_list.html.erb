@@ -1,4 +1,4 @@
-<% active = GlobalID::Locator.locate(session["list_#{@list.id}"][:active]) %>
+<% active = GlobalID::Locator.locate(session[@list.to_gid.to_s][:active]) %>
 
 <%= turbo_frame_tag list do %>
   <%= content_tag :div, class: "border border-dashed border-2 border-gray-400 p-4" do %>

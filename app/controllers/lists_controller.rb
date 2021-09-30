@@ -7,19 +7,19 @@ class ListsController < ApplicationController
   end
 
   def active_track
-    session["list_#{@list.id}"][:active] = Track.find(list_params[:active_track_id]).list_entry.to_gid.to_s
+    session[@list.to_gid.to_s][:active] = Track.find(list_params[:active_track_id]).list_entry.to_gid.to_s
 
     render turbo_stream: turbo_stream.replace(@list)
   end
 
   def toggle_repeat
-    session["list_#{@list.id}"][:repeat] = !session["list_#{@list.id}"].fetch("repeat", false)
+    session[@list.to_gid.to_s][:repeat] = !session[@list.to_gid.to_s].fetch("repeat", false)
 
     render turbo_stream: turbo_stream.replace(@list)
   end
 
   def toggle_shuffle
-    session["list_#{@list.id}"][:shuffle] = !session["list_#{@list.id}"].fetch("shuffle", false)
+    session[@list.to_gid.to_s][:shuffle] = !session[@list.to_gid.to_s].fetch("shuffle", false)
 
     render turbo_stream: turbo_stream.replace(@list)
   end
@@ -32,10 +32,10 @@ class ListsController < ApplicationController
 
   def set_list
     @list = List.friendly.find(params[:id])
+    session[@list.to_gid.to_s] ||= {}
   end
 
   def set_active_track
-    session["list_#{@list.id}"] ||= {}
-    session["list_#{@list.id}"][:active] ||= @list.list_entries.first.to_gid.to_s
+    session[@list.to_gid.to_s][:active] ||= @list.list_entries.first.to_gid.to_s
   end
 end

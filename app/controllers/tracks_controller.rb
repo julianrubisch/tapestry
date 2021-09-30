@@ -10,4 +10,9 @@ class TracksController < ApplicationController
     def set_track
       @track = Track.find(params[:id])
     end
+
+    def set_list
+      @list = List.friendly.find(params[:list_id])
+      session[@list.to_gid.to_s] ||= {}
+    end
 end
