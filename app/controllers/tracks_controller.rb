@@ -1,8 +1,10 @@
 class TracksController < ApplicationController
+  before_action :set_list, only: :show
   before_action :set_track, only: :show
+  # before_action :set_active, only: :show
 
   def show
-    authenticate_user! unless @track.list.public
+    authenticate_user! unless @list.public
   end
 
   private

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :lists, only: :show do
+    resources :tracks, only: :show
+
     member do
       authenticate :user do
         patch "active_track"
@@ -17,6 +19,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :tracks, only: :show
 end
