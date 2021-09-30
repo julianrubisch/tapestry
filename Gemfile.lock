@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/rails/kredis.git
-  revision: cdc1ce36a68554af4823f984fbec899b2d28c4e3
-  branch: main
-  specs:
-    kredis (0.2.3)
-      activesupport (>= 6.0.0)
-      redis (~> 4.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,7 +86,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     coderay (1.1.3)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crack (0.4.5)
       rexml
@@ -140,6 +131,9 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    kredis (0.4.0)
+      activesupport (>= 6.0.0)
+      redis (~> 4.2)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -207,7 +201,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.2.5)
+    redis (4.4.0)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -317,7 +311,7 @@ DEPENDENCIES
   friendly_id (~> 5.4)
   hotwire-rails (~> 0.1.3)
   jbuilder (~> 2.7)
-  kredis!
+  kredis
   listen (~> 3.3)
   nokogiri
   pg (~> 1.1)

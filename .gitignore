@@ -32,3 +32,6 @@ node_modules/
 
 *~
 /app/assets/stylesheets/tailwind-build.css
+.log/
+.dir-locals.el
+/app/models/#list_entry.rb#
