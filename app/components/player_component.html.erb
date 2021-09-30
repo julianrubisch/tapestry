@@ -1,6 +1,6 @@
 <div class="space-y-2 flex flex-col">
   <div class="flex justify-between items-center space-x-2">
-    <%= button_to active_track_list_path(track.list),
+    <%= button_to active_track_list_path(list),
      method: :patch,
      params: {list: {active_track_id: previous_track&.listable&.id}},
      disabled: !previous_track.present?,
@@ -10,7 +10,7 @@
 
     <%= audio_tag track.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
 
-    <%= button_to active_track_list_path(track.list),
+    <%= button_to active_track_list_path(list),
      method: :patch,
      params: {list: {active_track_id: next_track&.listable&.id}},
      disabled: !next_track.present?,
@@ -20,12 +20,12 @@
   </div> 
 
   <div class="flex justify-around items-center space-x-4 w-1/2 self-center">
-    <%= button_to toggle_repeat_list_path(track.list),
+    <%= button_to toggle_repeat_list_path(list),
      method: :patch,
      class: button_klass(repeat) do %> 
       <i class="fas fa-repeat fa-lg"></i>
     <% end %>
-    <%= button_to toggle_shuffle_list_path(track.list),
+    <%= button_to toggle_shuffle_list_path(list),
      method: :patch,
      class: button_klass(shuffle) do %> 
       <i class="fas fa-shuffle fa-lg"></i>

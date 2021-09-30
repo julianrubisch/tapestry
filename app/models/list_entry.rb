@@ -23,7 +23,7 @@ class ListEntry < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  has_many :list_entry_list_items
+  has_many :list_entry_list_items, -> { order(position: :asc) }
   has_many :lists, through: :list_entry_list_items
 
   delegated_type :listable, types: %w[Track Playlist]
@@ -53,6 +53,30 @@ class ListEntry < ApplicationRecord
 
       new listable: listable_type.new, url: base_uri, lists: [list].compact, artist: $1, title: $2
     end
+  end
+
+  def first_for_list?(list)
+    list_entry_list_items.find_by(list_id: list.id).first?
+  end
+
+  def last_for_list?(list)
+    list_entry_list_items.find_by(list_id: list.id).last?
+  end
+
+  def first_for_list(list)
+    list.list_entry_list_items.first.list_entry
+  end
+
+  def last_for_list(list)
+    list.list_entry_list_items.last.list_entry
+  end
+
+  def next_for_list(list)
+    list_entry_list_items.find_by(list_id: list.id).lower_item&.list_entry
+  end
+
+  def previous_for_list(list)
+    list_entry_list_items.find_by(list_id: list.id).higher_item&.list_entry
   end
 end
 
