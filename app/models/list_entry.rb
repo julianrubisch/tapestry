@@ -18,6 +18,7 @@
 #
 
 require "open-uri"
+require "onebox"
 
 class ListEntry < ApplicationRecord
   extend FriendlyId
@@ -53,6 +54,10 @@ class ListEntry < ApplicationRecord
 
       new listable: listable_type.new, url: base_uri, lists: [list].compact, artist: $1, title: $2
     end
+  end
+
+  def preview
+    Onebox.preview(url).to_s.html_safe
   end
 
   def first_for_list?(list)

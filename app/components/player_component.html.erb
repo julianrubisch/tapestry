@@ -8,7 +8,8 @@
       <i class="fas fa-backward-step fa-lg"></i>  
     <% end %>
 
-    <%= audio_tag playable.listable.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
+    <%#= audio_tag playable.listable.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
+    <%= playable.preview %>
 
     <%= button_to active_list_entry_list_path(list),
      method: :patch,
