@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     member do
       authenticate :user do
-        patch "active_track"
+        patch "active_list_entry"
         patch "toggle_repeat"
         patch "toggle_shuffle"
       end

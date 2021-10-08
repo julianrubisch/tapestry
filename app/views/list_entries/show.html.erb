@@ -1,14 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @list_entry.title %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @list_entry.url %>
-</p>
-
-<%= link_to 'Edit', edit_list_entry_path(@list_entry) %> |
-<%= link_to 'Back', list_entries_path %>
+<%= turbo_frame_tag "active_list_entry" do %>
+  <%= render @list_entry, list: @list %>
+<% end %>

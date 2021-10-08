@@ -1,8 +1,8 @@
 <div class="space-y-2 flex flex-col">
   <div class="flex justify-between items-center space-x-2">
-    <%= button_to active_track_list_path(list),
+    <%= button_to active_list_entry_list_path(list),
      method: :patch,
-     params: {list: {active_track_id: previous_track&.listable&.id}},
+     params: {list: {active_list_entry_id: previous_track&.listable&.id}},
      disabled: !previous_track.present?,
      class: button_klass do %>
       <i class="fas fa-backward-step fa-lg"></i>  
@@ -10,9 +10,9 @@
 
     <%= audio_tag track.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
 
-    <%= button_to active_track_list_path(list),
+    <%= button_to active_list_entry_list_path(list),
      method: :patch,
-     params: {list: {active_track_id: next_track&.listable&.id}},
+     params: {list: {active_list_entry_id: next_track&.listable&.id}},
      disabled: !next_track.present?,
      class: button_klass do %>
       <i class="fas fa-forward-step fa-lg"></i>  
