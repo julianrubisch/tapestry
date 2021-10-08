@@ -5,15 +5,15 @@ Rails.application.routes.draw do
     root "inbox#show"
     get "inbox", to: "inbox#show"
 
-    resources :list_entries, only: :create
+    resources :playables, only: :create
   end
 
   resources :lists, only: :show do
-    resources :list_entries, only: :show
+    resources :playables, only: :show
 
     member do
       authenticate :user do
-        patch "active_list_entry"
+        patch "active_playable"
         patch "toggle_repeat"
         patch "toggle_shuffle"
       end

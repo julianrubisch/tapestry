@@ -2,6 +2,6 @@ module Listable
   extend ActiveSupport::Concern
 
   included do
-    has_one :list_entry, as: :listable, touch: true, dependent: :destroy
+    has_one :playable, as: :listable, touch: true, dependent: :destroy
   end
 end

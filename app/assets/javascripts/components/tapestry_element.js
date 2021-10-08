@@ -30,8 +30,8 @@ export default class TapestryElement extends LitElement {
     this.setup();
     this.draw();
 
-    this.activeListEntryForm = document.querySelector(
-      `#active_list_entry_list_${this.listId}`
+    this.activePlayableForm = document.querySelector(
+      `#active_playable_list_${this.listId}`
     );
   }
 
@@ -66,10 +66,10 @@ export default class TapestryElement extends LitElement {
           .attr("style", "cursor: pointer;")
           .click(e => {
             e.preventDefault();
-            this.activeListEntryForm.querySelector(
-              `#list_active_list_entry_id`
+            this.activePlayableForm.querySelector(
+              `#list_active_playable_id`
             ).value = item.id;
-            this.activeListEntryForm.requestSubmit();
+            this.activePlayableForm.requestSubmit();
           });
 
         if (item.id == this.activeId) {

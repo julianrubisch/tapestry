@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: list_entries
+# Table name: playables
 #
 #  id            :uuid             not null, primary key
 #  artist        :string
@@ -14,11 +14,11 @@
 #
 # Indexes
 #
-#  index_list_entries_on_slug  (slug) UNIQUE
+#  index_playables_on_slug  (slug) UNIQUE
 #
 require "test_helper"
 
-class ListEntryTest < ActiveSupport::TestCase
+class PlayableTest < ActiveSupport::TestCase
   setup do
     @simple_soundcloud_track_url = "https://soundcloud.com/titled/limes"
     @soundcloud_tracks_url = "https://soundcloud.com/titled/tracks"
@@ -41,55 +41,55 @@ class ListEntryTest < ActiveSupport::TestCase
   end
 
   test "returns an empty instance if no URL is given" do
-    list_entry = ListEntry.init_from_url(url: "", list: lists(:one))
-    assert_instance_of(NilClass, list_entry&.listable)
-    assert_equal(nil, list_entry.url)
-    assert_equal(lists(:one), list_entry.list)
+    playable = Playable.init_from_url(url: "", list: lists(:one))
+    assert_instance_of(NilClass, playable&.listable)
+    assert_equal(nil, playable.url)
+    assert_equal(lists(:one), playable.list)
   end
 
   test "initializes a soundcloud track from a soundcloud URL" do
-    list_entry = ListEntry.init_from_url(url: @simple_soundcloud_track_url, list: lists(:one))
-    assert_instance_of(SoundCloudTrack, list_entry&.listable)
+    playable = Playable.init_from_url(url: @simple_soundcloud_track_url, list: lists(:one))
+    assert_instance_of(SoundCloudTrack, playable&.listable)
   end
 
   test "initializes a soundcloud track from a shortened soundcloud URL" do
-    list_entry = ListEntry.init_from_url(url: @shortened_soundcloud_track_url, list: lists(:one))
-    assert_instance_of(SoundCloudTrack, list_entry&.listable)
+    playable = Playable.init_from_url(url: @shortened_soundcloud_track_url, list: lists(:one))
+    assert_instance_of(SoundCloudTrack, playable&.listable)
   end
 
   test "passing a soundcloud track index view raises" do
     assert_raises UnparsableTrackUrlError do
-      ListEntry.init_from_url(url: @soundcloud_tracks_url, list: lists(:one))
+      Playable.init_from_url(url: @soundcloud_tracks_url, list: lists(:one))
     end
   end
 
   test "initializes a soundcloud playlist from a soundcloud set URL" do
-    list_entry = ListEntry.init_from_url(url: @simple_soundcloud_set_url, list: lists(:one))
-    assert_instance_of(SoundCloudPlaylist, list_entry&.listable)
+    playable = Playable.init_from_url(url: @simple_soundcloud_set_url, list: lists(:one))
+    assert_instance_of(SoundCloudPlaylist, playable&.listable)
   end
 
   test "initializes a soundcloud playlist from a shortened soundcloud set URL" do
-    list_entry = ListEntry.init_from_url(url: @shortened_soundcloud_set_url, list: lists(:one))
-    assert_instance_of(SoundCloudPlaylist, list_entry&.listable)
+    playable = Playable.init_from_url(url: @shortened_soundcloud_set_url, list: lists(:one))
+    assert_instance_of(SoundCloudPlaylist, playable&.listable)
   end
 
   test "initializes a bandcamp track from a bandcamp URL" do
-    list_entry = ListEntry.init_from_url(url: @simple_bandcamp_track_url, list: lists(:one))
-    assert_instance_of(BandcampTrack, list_entry&.listable)
+    playable = Playable.init_from_url(url: @simple_bandcamp_track_url, list: lists(:one))
+    assert_instance_of(BandcampTrack, playable&.listable)
   end
 
   test "initializes a bandcamp track from a shortened bandcamp URL" do
-    list_entry = ListEntry.init_from_url(url: @shortened_bandcamp_track_url, list: lists(:one))
-    assert_instance_of(BandcampTrack, list_entry&.listable)
+    playable = Playable.init_from_url(url: @shortened_bandcamp_track_url, list: lists(:one))
+    assert_instance_of(BandcampTrack, playable&.listable)
   end
 
   test "initializes a bandcamp playlist from a bandcamp album URL" do
-    list_entry = ListEntry.init_from_url(url: @simple_bandcamp_album_url, list: lists(:one))
-    assert_instance_of(BandcampAlbum, list_entry&.listable)
+    playable = Playable.init_from_url(url: @simple_bandcamp_album_url, list: lists(:one))
+    assert_instance_of(BandcampAlbum, playable&.listable)
   end
 
   test "initializes a bandcamp playlist from a shortened bandcamp album URL" do
-    list_entry = ListEntry.init_from_url(url: @shortened_bandcamp_album_url, list: lists(:one))
-    assert_instance_of(BandcampAlbum, list_entry&.listable)
+    playable = Playable.init_from_url(url: @shortened_bandcamp_album_url, list: lists(:one))
+    assert_instance_of(BandcampAlbum, playable&.listable)
   end
 end

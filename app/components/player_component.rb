@@ -12,7 +12,7 @@ class PlayerComponent < ViewComponent::Base
 
   def previous_playable
     if shuffle
-      list.list_entries.sample
+      list.playables.sample
     elsif repeat && playable.first_for_list?(list)
       playable.last_for_list(list)
     else
@@ -22,7 +22,7 @@ class PlayerComponent < ViewComponent::Base
 
   def next_playable
     if shuffle
-      list.list_entries.sample
+      list.playables.sample
     elsif repeat && playable.last_for_list?(list)
       playable.first_for_list(list)
     else

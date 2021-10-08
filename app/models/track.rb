@@ -12,5 +12,5 @@
 class Track < ApplicationRecord
   include Listable
 
-  delegate :lists, to: :list_entry
+  delegate :lists, to: :playable
 end

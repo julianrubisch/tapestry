@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: list_entries
+# Table name: playables
 #
 #  id            :uuid             not null, primary key
 #  artist        :string
@@ -14,7 +14,7 @@
 #
 # Indexes
 #
-#  index_list_entries_on_slug  (slug) UNIQUE
+#  index_playables_on_slug  (slug) UNIQUE
 #
 
 one:

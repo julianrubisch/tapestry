@@ -1,6 +1,6 @@
 class InboxController < ApplicationController
   def show
-    @list_entry = ListEntry.new
-    @list_entries = current_user.inbox.list_entries
+    @playable = Playable.new
+    @playables = current_user.inbox.playables
   end
 end

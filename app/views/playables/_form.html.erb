@@ -1,10 +1,10 @@
-<%= form_with(model: list_entry, class: "sm:flex sm:items-center") do |form| %>
+<%= form_with(model: playable, class: "sm:flex sm:items-center") do |form| %>
   <div class="w-full">
     <%= form.label :url, class: "sr-only" %>
     <%= form.text_field :url, class: "shadow-sm focus:ring-amber-500 focus:border-amber-500 block w-full sm:text-sm border-gray-300 rounded-md", placeholder: "Enter a SoundCloud or Bandcamp Url" %>
-    <% if list_entry.errors.any? %>
+    <% if playable.errors.any? %>
       <ul>
-        <% list_entry.errors.each do |error| %>
+        <% playable.errors.each do |error| %>
           <li class="mt-2 text-sm text-red-600"><%= error.full_message %></li>
         <% end %>
       </ul>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_070917) do
+ActiveRecord::Schema.define(version: 2021_10_08_105618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -25,28 +25,6 @@ ActiveRecord::Schema.define(version: 2021_07_27_070917) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
-  create_table "list_entries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "url"
-    t.string "title"
-    t.string "listable_type"
-    t.uuid "listable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "artist"
-    t.string "slug"
-    t.index ["slug"], name: "index_list_entries_on_slug", unique: true
-  end
-
-  create_table "list_entry_list_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "position"
-    t.uuid "list_id", null: false
-    t.uuid "list_entry_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_entry_id"], name: "index_list_entry_list_items_on_list_entry_id"
-    t.index ["list_id"], name: "index_list_entry_list_items_on_list_id"
   end
 
   create_table "list_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -71,6 +49,28 @@ ActiveRecord::Schema.define(version: 2021_07_27_070917) do
     t.float "max_duration", default: 30.0
     t.index ["owner_id"], name: "index_lists_on_owner_id"
     t.index ["slug"], name: "index_lists_on_slug", unique: true
+  end
+
+  create_table "playable_list_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "position"
+    t.uuid "list_id", null: false
+    t.uuid "playable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_playable_list_items_on_list_id"
+    t.index ["playable_id"], name: "index_playable_list_items_on_playable_id"
+  end
+
+  create_table "playables", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "url"
+    t.string "title"
+    t.string "listable_type"
+    t.uuid "listable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "artist"
+    t.string "slug"
+    t.index ["slug"], name: "index_playables_on_slug", unique: true
   end
 
   create_table "playlists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -99,9 +99,9 @@ ActiveRecord::Schema.define(version: 2021_07_27_070917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "list_entry_list_items", "list_entries"
-  add_foreign_key "list_entry_list_items", "lists"
   add_foreign_key "list_memberships", "lists"
   add_foreign_key "list_memberships", "users"
   add_foreign_key "lists", "users", column: "owner_id"
+  add_foreign_key "playable_list_items", "lists"
+  add_foreign_key "playable_list_items", "playables"
 end

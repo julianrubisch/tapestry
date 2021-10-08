@@ -32,8 +32,8 @@ class List < ApplicationRecord
   has_many :list_memberships
   has_many :users, through: :list_memberships
 
-  has_many :list_entry_list_items, -> { order(position: :asc) }
-  has_many :list_entries, through: :list_entry_list_items
+  has_many :playable_list_items, -> { order(position: :asc) }
+  has_many :playables, through: :playable_list_items
 
   validates :inbox, uniqueness: {scope: :owner, message: "A user can have only one inbox"}
 end

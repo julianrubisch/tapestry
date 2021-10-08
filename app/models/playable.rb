@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: list_entries
+# Table name: playables
 #
 #  id            :uuid             not null, primary key
 #  artist        :string
@@ -14,23 +14,23 @@
 #
 # Indexes
 #
-#  index_list_entries_on_slug  (slug) UNIQUE
+#  index_playables_on_slug  (slug) UNIQUE
 #
 
 require "open-uri"
 
-class ListEntry < ApplicationRecord
+class Playable < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  has_many :list_entry_list_items, -> { order(position: :asc) }
-  has_many :lists, through: :list_entry_list_items
+  has_many :playable_list_items, -> { order(position: :asc) }
+  has_many :lists, through: :playable_list_items
 
   delegated_type :listable, types: %w[Track Playlist]
 
   validates :url, :title, :artist, presence: true
 
-  broadcasts_to ->(list_entry) { :list_entries }, inserts_by: :append, target: "list_entries_inner"
+  broadcasts_to ->(playable) { :playables }, inserts_by: :append, target: "playables_inner"
 
   def self.init_from_url(url:, list: nil)
     return new(lists: [list].compact) if url.blank?
@@ -56,27 +56,27 @@ class ListEntry < ApplicationRecord
   end
 
   def first_for_list?(list)
-    list_entry_list_items.find_by(list_id: list.id).first?
+    playable_list_items.find_by(list_id: list.id).first?
   end
 
   def last_for_list?(list)
-    list_entry_list_items.find_by(list_id: list.id).last?
+    playable_list_items.find_by(list_id: list.id).last?
   end
 
   def first_for_list(list)
-    list.list_entry_list_items.first.list_entry
+    list.playable_list_items.first.playable
   end
 
   def last_for_list(list)
-    list.list_entry_list_items.last.list_entry
+    list.playable_list_items.last.playable
   end
 
   def next_for_list(list)
-    list_entry_list_items.find_by(list_id: list.id).lower_item&.list_entry
+    playable_list_items.find_by(list_id: list.id).lower_item&.playable
   end
 
   def previous_for_list(list)
-    list_entry_list_items.find_by(list_id: list.id).higher_item&.list_entry
+    playable_list_items.find_by(list_id: list.id).higher_item&.playable
   end
 end
 

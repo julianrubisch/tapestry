@@ -1,13 +1,13 @@
 <div class="mb-8">
-  <%= turbo_frame_tag "list_entry_form" do %>
-    <%= render "list_entries/form", list_entry: @list_entry %>
+  <%= turbo_frame_tag "playable_form" do %>
+    <%= render "playables/form", playable: @playable %>
   <% end %>
 </div>
 
-<%= turbo_stream_from "list_entries" %>
+<%= turbo_stream_from "playables" %>
 
-<%= turbo_frame_tag "list_entries" do %>
-  <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2" id="list_entries_inner">
-    <%= render @list_entries %>
+<%= turbo_frame_tag "playables" do %>
+  <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2" id="playables_inner">
+    <%= render @playables %>
   </ul>
 <% end %>
