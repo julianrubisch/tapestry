@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :lists, only: :show do
-    resources :tracks, only: :show
+    resources :list_entries, only: :show
 
     member do
       authenticate :user do

@@ -9,5 +9,5 @@
     <%= f.hidden_field :active_list_entry_id, {value: active.id} %>
   <% end %>
 
-  <%= turbo_frame_tag "active_list_entry", src: list_track_url(list, active.listable) if active.present? %>
+  <%= turbo_frame_tag "active_list_entry", src: list_list_entry_url(list, active) if active.present? %>
 <% end %>

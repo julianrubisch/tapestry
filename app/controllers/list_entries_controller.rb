@@ -1,4 +1,5 @@
 class ListEntriesController < ApplicationController
+  before_action :set_list, only: :show
   before_action :set_list_entry, only: %i[ show edit update destroy ]
 
   # GET /list_entries or /list_entries.json
@@ -58,7 +59,12 @@ class ListEntriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list_entry
-      @list_entry = ListEntry.find(params[:id])
+      @list_entry = ListEntry.friendly.find(params[:id])
+    end
+
+    def set_list
+      @list = List.friendly.find(params[:list_id])
+      session[@list.to_gid.to_s] ||= {}
     end
 
     # Only allow a list of trusted parameters through.

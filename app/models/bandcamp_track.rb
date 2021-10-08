@@ -18,6 +18,10 @@ class BandcampTrack < Track
     BandcampTrackScraperJob.perform_later self
   end
 
+  def to_partial_path
+    "tracks/track"
+  end
+
   def duration
     ActiveSupport::Duration.parse(super.start_with?("PT") ? super : super.insert(1, "T"))
   end

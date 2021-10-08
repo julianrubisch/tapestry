@@ -10,4 +10,7 @@
 #  updated_at :datetime         not null
 #
 class SoundCloudTrack < Track
+  def to_partial_path
+    "tracks/track"
+  end
 end
