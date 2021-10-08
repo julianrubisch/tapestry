@@ -1,32 +1,32 @@
 # frozen_string_literal: true
 
 class PlayerComponent < ViewComponent::Base
-  attr_reader :track, :list, :repeat, :shuffle
+  attr_reader :playable, :list, :repeat, :shuffle
 
-  def initialize(track:, list:, repeat:, shuffle:)
+  def initialize(playable:, list:, repeat:, shuffle:)
     @list = list
-    @track = track
+    @playable = playable
     @repeat = repeat
     @shuffle = shuffle
   end
 
-  def previous_track
+  def previous_playable
     if shuffle
       list.list_entries.sample
-    elsif repeat && track.list_entry.first_for_list?(list)
-      track.list_entry.last_for_list(list)
+    elsif repeat && playable.first_for_list?(list)
+      playable.last_for_list(list)
     else
-      track.list_entry.previous_for_list(list)
+      playable.previous_for_list(list)
     end
   end
 
-  def next_track
+  def next_playable
     if shuffle
       list.list_entries.sample
-    elsif repeat && track.list_entry.last_for_list?(list)
-      track.list_entry.first_for_list(list)
+    elsif repeat && playable.last_for_list?(list)
+      playable.first_for_list(list)
     else
-      track.list_entry.next_for_list(list)
+      playable.next_for_list(list)
     end
   end
 

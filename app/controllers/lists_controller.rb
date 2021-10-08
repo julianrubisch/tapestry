@@ -7,7 +7,7 @@ class ListsController < ApplicationController
   end
 
   def active_list_entry
-    session[@list.to_gid.to_s][:active] = Track.find(list_params[:active_list_entry_id]).list_entry.to_gid.to_s
+    session[@list.to_gid.to_s][:active] = ListEntry.find(list_params[:active_list_entry_id]).to_gid.to_s
 
     render turbo_stream: turbo_stream.replace(@list)
   end

@@ -2,11 +2,11 @@
 
 <%= turbo_frame_tag list do %>
   <%= content_tag :div, class: "border border-dashed border-2 border-gray-400 p-4" do %>
-    <tapestry-element maxduration="<%= list.max_duration %>" items="<%= list.list_entries.map { |entry| {id: entry.listable_id, duration: entry.listable.duration.in_minutes, color: ["#F87171", "#34D399", "#F472B6", "#4ADE80", "#38BDF8", "#818CF8"].sample} }.to_json %>" listid="<%= list.id %>" activeid="<%= active&.listable&.id %>"></tapestry-element>
+    <tapestry-element maxduration="<%= list.max_duration %>" items="<%= list.list_entries.map { |entry| {id: entry.id, duration: entry.listable.duration.in_minutes, color: ["#F87171", "#34D399", "#F472B6", "#4ADE80", "#38BDF8", "#818CF8"].sample} }.to_json %>" listid="<%= list.id %>" activeid="<%= active&.id %>"></tapestry-element>
   <% end %>
 
   <%= form_with(model: list, url: active_list_entry_list_path(list), id: dom_id(list, :active_list_entry)) do |f| %>
-    <%= f.hidden_field :active_list_entry_id, {value: active.listable.id} %>
+    <%= f.hidden_field :active_list_entry_id, {value: active.id} %>
   <% end %>
 
   <%= turbo_frame_tag "active_list_entry", src: list_track_url(list, active.listable) if active.present? %>
