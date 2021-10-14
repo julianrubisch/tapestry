@@ -20,13 +20,11 @@
 one:
   url: MyString
   title: MyString
-  list: one
   listable_type: MyString
   listable_id: 
 
 two:
   url: MyString
   title: MyString
-  list: two
   listable_type: MyString
   listable_id: 

@@ -44,7 +44,7 @@ class PlayableTest < ActiveSupport::TestCase
     playable = Playable.init_from_url(url: "", list: lists(:one))
     assert_instance_of(NilClass, playable&.listable)
     assert_equal(nil, playable.url)
-    assert_equal(lists(:one), playable.list)
+    assert_equal(lists(:one), playable.lists.first)
   end
 
   test "initializes a soundcloud track from a soundcloud URL" do
