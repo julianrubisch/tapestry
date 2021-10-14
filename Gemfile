@@ -96,3 +96,5 @@ gem "acts_as_list"
 
 # View components for Rails
 gem "view_component", require: "view_component/engine"
+
+gem "onebox"
