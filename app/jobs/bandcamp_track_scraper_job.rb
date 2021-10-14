@@ -17,6 +17,6 @@ class BandcampTrackScraperJob < ApplicationJob
 
     # 5. and store properties
     track.playable.update(artist: track.byArtist["name"], title: track.name)
-    track.update(audio_url: track.additionalProperty.find { |entry| entry["name"] == "file_mp3-128" }["value"])
+    # track.update(audio_url: track.additionalProperty.find { |entry| entry["name"] == "file_mp3-128" }["value"])
   end
 end
