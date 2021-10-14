@@ -1,5 +1,10 @@
 <div class="space-y-2 flex flex-col">
   <div class="flex justify-between items-center space-x-2">
+    <%#= audio_tag playable.listable.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
+    <%= playable.preview %>
+  </div>
+
+  <div class="flex justify-around items-center space-x-4 w-1/2 self-center">
     <%= button_to active_playable_list_path(list),
      method: :patch,
      params: {list: {active_playable_id: previous_playable&.id}},
@@ -7,20 +12,6 @@
      class: button_klass do %>
       <i class="fas fa-backward-step fa-lg"></i>  
     <% end %>
-
-    <%#= audio_tag playable.listable.audio_url, controls: true, class: "flex-1", autoplay: true, loop: false %>
-    <%= playable.preview %>
-
-    <%= button_to active_playable_list_path(list),
-     method: :patch,
-     params: {list: {active_playable_id: next_playable&.id}},
-     disabled: !next_playable.present?,
-     class: button_klass do %>
-      <i class="fas fa-forward-step fa-lg"></i>  
-    <% end %>
-  </div> 
-
-  <div class="flex justify-around items-center space-x-4 w-1/2 self-center">
     <%= button_to toggle_repeat_list_path(list),
      method: :patch,
      class: button_klass(repeat) do %> 
@@ -30,6 +21,13 @@
      method: :patch,
      class: button_klass(shuffle) do %> 
       <i class="fas fa-shuffle fa-lg"></i>
+    <% end %>
+    <%= button_to active_playable_list_path(list),
+     method: :patch,
+     params: {list: {active_playable_id: next_playable&.id}},
+     disabled: !next_playable.present?,
+     class: button_klass do %>
+      <i class="fas fa-forward-step fa-lg"></i>  
     <% end %>
   </div> 
 </div>
