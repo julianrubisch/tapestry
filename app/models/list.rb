@@ -36,4 +36,6 @@ class List < ApplicationRecord
   has_many :playables, through: :playable_list_items
 
   validates :inbox, uniqueness: {scope: :owner, message: "A user can have only one inbox"}
+
+  kredis_hash :active_playables
 end

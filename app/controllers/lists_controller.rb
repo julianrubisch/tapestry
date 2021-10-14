@@ -7,21 +7,22 @@ class ListsController < ApplicationController
   end
 
   def active_playable
-    session[@list.to_gid.to_s][:active] = Playable.find(list_params[:active_playable_id]).to_gid.to_s
+    @list.active_playables[current_user.id] = Playable.find(list_params[:active_playable_id]).to_gid.to_s
 
-    render turbo_stream: turbo_stream.replace(@list)
+    # TODO make this a .turbo_stream.erb partial
+    render turbo_stream: turbo_stream.replace(@list, partial: "lists/list", locals: {list: @list, user: current_user})
   end
 
   def toggle_repeat
     session[@list.to_gid.to_s][:repeat] = !session[@list.to_gid.to_s].fetch("repeat", false)
 
-    render turbo_stream: turbo_stream.replace(@list)
+    render turbo_stream: turbo_stream.replace(@list, partial: "lists/list", locals: {list: @list, user: current_user})
   end
 
   def toggle_shuffle
     session[@list.to_gid.to_s][:shuffle] = !session[@list.to_gid.to_s].fetch("shuffle", false)
 
-    render turbo_stream: turbo_stream.replace(@list)
+    render turbo_stream: turbo_stream.replace(@list, partial: "lists/list", locals: {list: @list, user: current_user})
   end
 
   private
@@ -36,6 +37,6 @@ class ListsController < ApplicationController
   end
 
   def set_active_playable
-    session[@list.to_gid.to_s][:active] ||= @list.playables.first.to_gid.to_s
+    @list.active_playables[current_user.id] ||= @list.playables.first.to_gid.to_s
   end
 end

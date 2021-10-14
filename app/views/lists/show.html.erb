@@ -62,5 +62,5 @@
 
   <%= turbo_stream_from @list %>
   
-  <%= render @list %>
+  <%= render @list, user: current_user %>
 </div>
