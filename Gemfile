@@ -66,6 +66,9 @@ gem "devise", "~> 4.8"
 # Simple, efficient background processing for Ruby
 gem "sidekiq", "~> 6.2"
 
+# manage JS deps
+gem "importmap-rails"
+
 group :development, :test do
   # Use Pry as your rails console
   gem "pry-rails"
