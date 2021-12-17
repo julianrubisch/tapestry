@@ -13,6 +13,7 @@ class ListsController < ApplicationController
     render turbo_stream: turbo_stream.replace(@list, partial: "lists/list", locals: {list: @list, user: current_user})
   end
 
+  # TODO everything that doesn't feel RESTy should go into SR?
   def toggle_repeat
     session[@list.to_gid.to_s][:repeat] = !session[@list.to_gid.to_s].fetch("repeat", false)
 

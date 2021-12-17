@@ -66,8 +66,11 @@ gem "devise", "~> 4.8"
 # Simple, efficient background processing for Ruby
 gem "sidekiq", "~> 6.2"
 
-# manage JS deps
+# Use ESM with importmap to manage modern JavaScript in Rails without transpiling or bundling.
 gem "importmap-rails"
+
+# Bundle and process CSS with Tailwind, Bootstrap, PostCSS, Sass in Rails via Node.js.
+gem "cssbundling-rails"
 
 group :development, :test do
   # Use Pry as your rails console
@@ -100,4 +103,5 @@ gem "acts_as_list"
 # View components for Rails
 gem "view_component", require: "view_component/engine"
 
+# A gem for generating embeddable HTML previews from URLs.
 gem "onebox"

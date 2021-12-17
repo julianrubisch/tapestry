@@ -1,21 +1,13 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   mode: "jit",
-  purge: [
+  content: [
     "./app/**/*.html.erb",
     "./app/components/**/*.rb",
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js"
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        amber: colors.amber,
-        red: colors.red
-      }
-    }
+    extend: {}
   },
   variants: {
     extend: {}
