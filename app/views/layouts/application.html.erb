@@ -13,7 +13,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body class="bg-amber-200">
+  <body class="bg-amber-200" data-controller="modal">
+    <%= content_for :modal %>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
       <div class="max-w-3xl mx-auto">
