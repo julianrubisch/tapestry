@@ -1,11 +1,11 @@
 <%= turbo_frame_tag playable do %>
-  <li class="col-span-1 flex shadow-sm rounded-md">
-    <div class="flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md">
+  <li class="col-span-1 flex shadow-sm rounded-full">
+    <div class="flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-full">
       <% if playable.listable.image.present? %>
-        <%= image_tag playable.listable.image, alt: playable.title, class: "object-cover rounded-l-md" %>
+        <%= image_tag playable.listable.image, alt: playable.title, class: "object-cover rounded-l-full" %>
       <% end %>
     </div>
-    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-full truncate">
       <div class="flex-1 px-4 py-2 text-sm truncate">
         <%= link_to playable.url do %>
           <%= content_tag :div, playable.title %>

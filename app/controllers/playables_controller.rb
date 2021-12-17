@@ -22,10 +22,10 @@ class PlayablesController < ApplicationController
 
   # POST /playables or /playables.json
   def create
-    @playable = Playable.init_from_url(url: playable_params[:url], list: current_user.inbox)
+    @playable = Playable.init_from_url(url: playable_params[:url])
 
     respond_to do |format|
-      if @playable.save
+      if current_user.inbox.playables << @playable
         format.html { redirect_to inbox_path, notice: "List entry was successfully created." }
       else
         @playables = current_user.inbox.playables
