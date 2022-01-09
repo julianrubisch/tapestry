@@ -44,11 +44,6 @@ on_project_stop: docker kill tapestry_db_1 && docker kill tapestry_redis_1
 windows:
   - db: docker-compose -f docker/docker-compose.dev.yml -p tapestry up
   - console: bin/rails c
-  - server:
-      layout: main-vertical
-      panes:
-        - env DISABLE_SPRING=1 bin/rails s
-        - yarn build:css --watch
-  - worker: bundle exec sidekiq
+  - server: overmind start -f Procfile.dev
   
   - shell:
