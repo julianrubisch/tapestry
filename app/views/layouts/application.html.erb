@@ -13,7 +13,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body class="bg-amber-200" data-controller="modal">
+  <body class="bg-amber-200"
+        data-controller="modal"
+        data-modal-toggle-class="hidden"
+        data-modal-overlay-entering-class="ease-out duration-300"
+        data-modal-overlay-leaving-class="ease-in duration-200"
+        data-modal-overlay-visible-class="opacity-100"
+        data-modal-overlay-invisible-class="opacity-0"
+        data-modal-modal-entering-class="ease-out duration-300"
+        data-modal-modal-leaving-class="ease-in duration-200"
+        data-modal-modal-visible-class="opacity-100 translate-y-0 sm:scale-100"
+        data-modal-modal-invisible-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+  >
     <%= content_for :modal %>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
