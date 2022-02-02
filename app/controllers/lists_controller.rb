@@ -1,10 +1,20 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[show active_playable toggle_repeat toggle_shuffle]
+  before_action :set_list, only: %i[show update active_playable toggle_repeat toggle_shuffle]
   before_action :set_active_playable, only: %i[show toggle_repeat toggle_shuffle]
 
   def show
     @new_playables = current_user.inbox.playables.where.not(id: @list.playables.pluck(:id)).unscope(:order).order(created_at: :desc)
     authenticate_user! unless @list.public
+  end
+
+  def update
+    @list.playables << Playable.find(list_params[:playable_id])
+
+    if @list.update(list_params.except(:playable_id))
+      render turbo_stream: turbo_stream.replace(@list, partial: "lists/list", locals: {list: @list, user: current_user})
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def active_playable
@@ -30,7 +40,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:active_playable_id)
+    params.require(:list).permit(:active_playable_id, :playable_id)
   end
 
   def set_list

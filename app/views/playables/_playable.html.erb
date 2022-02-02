@@ -22,7 +22,7 @@
 
   <li class="col-span-1 flex shadow-sm rounded-full">
     <% if local_assigns[:link_path].present? %>
-      <%= button_to link_path, method: :post, form_class: "w-full", class: "w-full h-full flex" do %>
+      <%= button_to link_path, method: :patch, form: {data: {action: "turbo:submit-end->modal#close"}}, form_class: "w-full", class: "w-full h-full flex", params: {list: {playable_id: playable.id}} do %>
         <%= content_for dom_id(playable, :inner_li).to_sym %>
       <% end %>
     <% else %>

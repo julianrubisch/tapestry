@@ -1,4 +1,4 @@
-<% active = GlobalID::Locator.locate(@list.active_playables[user.id]) %>
+<% active = GlobalID::Locator.locate(list.active_playables[user.id]) %>
 
 <%= turbo_frame_tag list do %>
   <%= content_tag :div, class: "border border-dashed border-2 border-gray-400 p-4" do %>

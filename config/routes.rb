@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :playables, only: :create
   end
 
-  resources :lists, only: :show do
-    resources :playables, only: %i[show create]
+  resources :lists, only: %i[show update] do
+    resources :playables, only: :show
 
     member do
       authenticate :user do
