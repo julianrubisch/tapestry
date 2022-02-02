@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   before_action :set_active_playable, only: %i[show toggle_repeat toggle_shuffle]
 
   def show
+    @new_playables = current_user.inbox.playables.where.not(id: @list.playables.pluck(:id)).unscope(:order).order(created_at: :desc)
     authenticate_user! unless @list.public
   end
 

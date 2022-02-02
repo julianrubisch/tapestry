@@ -1,12 +1,12 @@
 <%= turbo_frame_tag playable do %>
-  <li class="col-span-1 flex shadow-sm rounded-full">
+  <% content_for dom_id(playable, :inner_li).to_sym do %>
     <div class="flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-full">
       <% if playable.listable.image.present? %>
         <%= image_tag playable.listable.image, alt: playable.title, class: "object-cover rounded-l-full" %>
       <% end %>
     </div>
-    <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-full truncate">
-      <div class="flex-1 px-4 py-2 text-sm truncate">
+    <div class="flex-1 flex items-center justify-between <%= "h-full" if local_assigns[:link_path].present? %> border-t border-r border-b border-gray-200 bg-white rounded-r-full truncate">
+      <div class="flex-1 px-4 py-2 text-sm truncate text-left">
         <%= link_to playable.url do %>
           <%= content_tag :div, playable.title %>
           <%= content_tag :p, playable.artist, class: "text-gray-500" %>
@@ -18,5 +18,15 @@
         <% end %>
       </div>
     </div>
+  <% end %>
+
+  <li class="col-span-1 flex shadow-sm rounded-full">
+    <% if local_assigns[:link_path].present? %>
+      <%= button_to link_path, method: :post, form_class: "w-full", class: "w-full h-full flex" do %>
+        <%= content_for dom_id(playable, :inner_li).to_sym %>
+      <% end %>
+    <% else %>
+      <%= content_for dom_id(playable, :inner_li).to_sym %>
+    <% end %>
   </li>
 <% end %>

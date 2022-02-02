@@ -157,6 +157,8 @@ GEM
     multipart-post (2.1.1)
     mustache (1.1.1)
     nio4r (2.5.8)
+    nokogiri (1.12.5-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
@@ -283,10 +285,11 @@ GEM
       rubocop-performance (= 1.11.2)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
-    thor (1.1.0)
+    thor (1.2.1)
     tilt (2.0.10)
-    turbo-rails (7.1.0)
-      rails (>= 6.0.0)
+    turbo-rails (1.0.0)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
@@ -315,9 +318,10 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yard (0.9.26)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-19
   x86_64-linux
 
@@ -359,4 +363,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.2.4
+   2.2.5

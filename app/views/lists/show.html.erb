@@ -1,5 +1,5 @@
 <%= content_for :modal do %>
-  <%= render "lists/modals/new" %>
+  <%= render "lists/modals/new", list: @list, playables: @new_playables %>
 <% end %>
 
 <div class="space-y-6">
