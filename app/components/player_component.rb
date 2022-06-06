@@ -31,6 +31,6 @@ class PlayerComponent < ViewComponent::Base
   end
 
   def button_klass(active = false)
-    "inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white #{active ? "bg-amber-700" : "bg-amber-500"} hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 disabled:opacity-50"
+    "inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium shadow-sm #{active ? "text-primary-800" : "text-white" } #{active ? "bg-primary-50" : "bg-primary-800"} hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-700 disabled:opacity-50 #{active ? "border-primary-800" : "border-transparent"}"
   end
 end
